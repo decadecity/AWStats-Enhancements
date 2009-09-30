@@ -130,6 +130,7 @@
 #mod - start
 'iphone','iphone',
 'newsrob','android',
+'apple\-pubsub','macosx',
 #mod - end
 # Windows OS family
 'windows[_+ ]?2005','winlong','windows[_+ ]nt[_+ ]6\.0','winlong',
@@ -223,6 +224,7 @@
 #mod - start
 'android','<a href="http://code.google.com/android/" title="Google Android home page [new window]" target="_blank">Google Android</a>',
 'iphone','iPhone',
+'apple\-pubsub','OSX news reader',
 #mod - end
 
 # Windows family OS

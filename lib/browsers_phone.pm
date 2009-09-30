@@ -585,7 +585,9 @@
 'cnf2',
 'docomo',
 'ipcheck',
-'iphone',
+#mod - start
+#'iphone',
+#mod - end
 'portalmmm',
 # Others (TV)
 'webtv',
@@ -619,7 +621,7 @@
 'POE\-Component\-Client\-HTTP',
 'mozilla',				# Must be at end because a lot of browsers contains mozilla in string
 'libwww',				# Must be at end because some browser have both 'browser id' and 'libwww'
-'lwp'
+'lwp',
 #mod - start
 'java',
 'php',
@@ -1188,7 +1190,9 @@
 'docomo','I-Mode phone (PDA/Phone browser)',
 'portalmmm','I-Mode phone (PDA/Phone browser)',
 'ipcheck','Supervision IP Check (phone)',
-'iphone','IPhone (PDA/Phone browser)',
+#mod - start
+#'iphone','IPhone (PDA/Phone browser)',
+#mod - end
 # Others (TV)
 'webtv','WebTV browser',
 # Anonymous Proxy Browsers (can be used as grabbers as well...)
@@ -1239,7 +1243,7 @@
 'webreaper','1',
 'wget','1',
 'webdownloader\sfor\sx','1',
-'webzip','1'
+'webzip','1',
 #mod - start
 'facebookexternalhit','1',
 'browsershots','1',
@@ -1395,9 +1399,13 @@
 'wap','pdaphone',					# Generic WAP phone (must be after 'wap*')
 'up\.','pdaphone',
 # PDA/Phonecell browsers
-'blackberry','pdaphone',
+#mod - start
+#'blackberry','pdaphone',
+#mod - end
 'docomo','pdaphone',
-'iphone','pdaphone',
+#mod - start
+#'iphone','pdaphone',
+#mod - end
 'portalmmm','pdaphone',
 # Others (TV)
 'webtv','webtv',
