@@ -172,7 +172,7 @@
 
 %MimeHashFamily=(
 #mod - start
-'img','image',
+'img','img',
 'grav','grav',
 'ajax','ajax',
 #mod - end
