@@ -3,10 +3,10 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2008/09/07 14:05:59 $
+# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2009/08/08 11:48:45 $
 
 # Originale version by malu
-# 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
+# 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html
 # 				akregator (rss)
 #				AppleSyndication  (rss)
 #				BlogBridge http://www.blogbridge.com/ (rss)
@@ -43,12 +43,13 @@
 'omniweb',
 'opera',
 
+#mod - start
 'ipod',
 'iphone',
 'android',
-'blackberry',
 'ipx',
 'worldpay',
+#mod - end
 
 # Other standard web browsers
 '22acidownload',
@@ -105,8 +106,12 @@
 'teleport',
 'webcapture',
 'webcopier',
+
+#mod - start
 'facebookexternalhit',
 'browsershots',
+#mod - end
+
 # Media only browsers
 'real',
 'winamp',				# Works for winampmpeg and winamp3httprdr
@@ -126,42 +131,47 @@
 'xine',
 'xmms',
 # RSS Readers
+
+#mod- start
+'apple\-pubsub',
+'newsrob',
+#mod - end
+
 'abilon',
-'aggrevator', 
+'aggrevator',
+'aiderss',
 'akregator',
 'applesyndication',
-'apple\-pubsub',
 'betanews_reader',
 'blogbridge',
 'cyndicate',
-'feeddemon', 
-'feedreader', 
+'feeddemon',
+'feedreader',
 'feedtools',
 'greatnews',
 'gregarius',
-'hatena_rss', 
-'jetbrains_omea', 
+'hatena_rss',
+'jetbrains_omea',
 'liferea',
-'netnewswire', 
-'newsfire', 
-'newsgator', 
-'newsrob',
+'netnewswire',
+'newsfire',
+'newsgator',
 'newzcrawler',
 'plagger',
-'pluck', 
+'pluck',
 'potu',
 'pubsub\-rss\-reader',
-'pulpfiction', 
-'rssbandit', 
+'pulpfiction',
+'rssbandit',
 'rssreader',
-'rssowl', 
+'rssowl',
 'rss\sxpress',
 'rssxpress',
-'sage', 
-'sharpreader', 
-'shrook', 
-'straw', 
-'syndirella', 
+'sage',
+'sharpreader',
+'shrook',
+'straw',
+'syndirella',
 'vienna',
 'wizz\srss\snews\sreader',
 # PDA/Phonecell browsers
@@ -279,6 +289,14 @@
 'nokia7200',
 'nokia7600',
 'nokia7610',
+'nokia6500',
+'nokia5310',
+'nokia6300',
+'nokia6131',
+'nokia5200',
+'nokia7370',
+'nokia5610',
+'nokian70',
 'opwv\-sdk',
 'panasonic\-gad35',
 'panasonic\-gad67',
@@ -344,7 +362,6 @@
 'samsung\-sgh\-e800',
 'samsung\-sgh\-x100',
 'samsung\-sgh\-x600',
-'samsung\-sgh\-f480',
 'sec\-sghc100',
 'sec\-sghp100',
 'sec\-sghp400',
@@ -421,7 +438,6 @@
 'sonyericssont68i',
 'sonyericssont620',
 'sonyericssont630',
-'sonyericssonw910',
 'lg\-c1100',
 'lg\-c1200',
 'lg\-c2200',
@@ -550,7 +566,6 @@
 'nokia7270',
 'nokia7280',
 'nokia9500',
-'nokia5310',
 'panasonic\-a200',
 'panasonic\-g70',
 'panasonic\-x100',
@@ -563,17 +578,22 @@
 'n21i',
 'n22i',
 'ts21i',
-# PDA/Phonecell I-Mode browsers
-'docomo',
-'portalmmm',
-'ipcheck',
+'wap',					# Generic WAP phone (must be after 'wap*')
+'up\.',					# Works for UP.Browser and UP.Link
+# PDA/Phonecell browsers
+'blackberry',
 'cnf2',
+'docomo',
+'ipcheck',
+'iphone',
+'portalmmm',
 # Others (TV)
 'webtv',
 # Anonymous Proxy Browsers (can be used as grabbers as well...)
 'cjb\.net',
 'ossproxy',
 # Other kind of browsers
+'adobeair',
 'apt',
 'analogx_proxy',
 'gnome\-vfs',
@@ -585,7 +605,6 @@
 'javaws',
 'wget',
 'chilkat',
-'php',
 'webdownloader\sfor\sx',
 'w3m',
 'wdg_validator',
@@ -597,12 +616,14 @@
 'microsoft\-webdav\-miniredir',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\scache\smanager',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sdav',
-'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sprotocol\sdiscovery',
 'POE\-Component\-Client\-HTTP',
-'java',
 'mozilla',				# Must be at end because a lot of browsers contains mozilla in string
 'libwww',				# Must be at end because some browser have both 'browser id' and 'libwww'
 'lwp'
+#mod - start
+'java',
+'php',
+#mod - end
 );
 
 # BrowsersHashIDLib
@@ -613,15 +634,7 @@
 'msie','MS Internet Explorer',
 'netscape','Netscape',
 'firefox','Firefox',
-'svn', 'Subversion client', 
-
-'ipod','iPod',
-'iphone','iPhone',
-'android','Android',
-'blackberry','BlackBerry',
-
-'ipx','IPX',
-'worldpay','WorldPay',
+'svn', 'Subversion client',
 
 'chrome','Google Chrome',
 'firebird','Firebird (Old Firefox)',
@@ -632,6 +645,25 @@
 'lynx','Lynx',
 'omniweb','OmniWeb',
 'opera','Opera',
+
+#mod - start
+'ipod','iPod',
+'iphone','iPhone',
+'android','Android',
+
+'ipx','IPX',
+'worldpay','WorldPay',
+
+'newsrob', 'NewsRob (RSS Reader)',
+'apple\-pubsub','Apple OSX newsreader',
+
+'facebookexternalhit','<a href="http://www.facebook.com/externalhit_uatext.php" target="_blank">FaceBook external hit</a>',
+'browsershots','<a href="http://browsershots.org/" target="_blank">Browsershots</a>',
+
+'php','PHP',
+'java','Java',
+#mod-end
+
 # Other standard web browsers
 '22acidownload','22AciDownload',
 'aol\-iweng','AOL-Iweng',
@@ -687,9 +719,6 @@
 'teleport','TelePort Pro',
 'webcapture','Acrobat Webcapture',
 'webcopier', 'WebCopier',
-'php','PHP',
-'facebookexternalhit','<a href="http://www.facebook.com/externalhit_uatext.php" target="_blank">FaceBook external hit</a>',
-'browsershots','<a href="http://browsershots.org/" target="_blank">Browsershots</a>',
 # Media only browsers
 'real','Real player or compatible (media player)',
 'winamp','WinAmp (media player)',				# Works for winampmpeg and winamp3httprdr
@@ -703,6 +732,7 @@
 'mplayer','The Movie Player (media player)',
 'nsplayer','NetShow Player (media player)',
 'qts','Quicktime',
+'quicktime','QuickTime',
 'sonique','Sonique (media player)',
 'uplayer','Ultra Player (media player)',
 'xaudio','Some XAudio Engine based MPEG player (media player)',
@@ -711,10 +741,10 @@
 # RSS Readers
 'abilon','Abilon (RSS Reader)',
 'aggrevator', 'Aggrevator (RSS Reader)',
-'akregator','<a href="http://akregator.sourceforge.net/" title="Browser home page [new window]" target="_blank">Akregator (RSS Reader)</a>',  
+'aiderss', 'AideRSS (RSS Reader)',
+'akregator','<a href="http://akregator.sourceforge.net/" title="Browser home page [new window]" target="_blank">Akregator (RSS Reader)</a>',
 'applesyndication','<a href="http://www.apple.com/macosx/features/safari/" title="Browser home page [new window]" target="_blank">AppleSyndication (RSS Reader)</a>',
 'betanews_reader','Betanews Reader (RSS Reader)',
-'apple\-pubsub','Apple OSX newsreader',
 'blogbridge','<a href="http://www.blogbridge.com/" title="Browser home page [new window]" target="_blank">BlogBridge (RSS Reader)</a>',
 'cyndicate','Cyndicate (RSS Reader)',
 'feeddemon', 'FeedDemon (RSS Reader)',
@@ -728,7 +758,6 @@
 'netnewswire', 'NetNewsWire (RSS Reader)',
 'newsfire', 'NewsFire (RSS Reader)',
 'newsgator', 'NewsGator (RSS Reader)',
-'newsrob', 'NewsRob (RSS Reader)',
 'newzcrawler', 'NewzCrawler (RSS Reader)',
 'plagger', 'Plagger (RSS Reader)',
 'pluck', 'Pluck (RSS Reader)',
@@ -862,6 +891,14 @@
 'nokia7200','Nokia 7200 (phone)',
 'nokia7600','Nokia 7600 (phone)',
 'nokia7610','Nokia 7610 (phone)',
+'nokia6500','Nokia 6500 (phone)',
+'nokia5310','Nokia 5310 (phone)',
+'nokia6300','Nokia 6300 (phone)',
+'nokia6131','Nokia 6131 (phone)',
+'nokia5200','Nokia 5200 (phone)',
+'nokia7370','Nokia 7370 (phone)',
+'nokia5610','Nokia 5610 (phone)',
+'nokian70','Nokia N70 (phone)',
 'opwv\-sdk','openwave sdk (phone)',
 'panasonic\-gad35','Panasonic GD35 (phone)',
 'panasonic\-gad67','panasonic GD67 (phone)',
@@ -927,7 +964,6 @@
 'samsung\-sgh\-e800','Samsung E800 (phone)',
 'samsung\-sgh\-x100','Samsung X100 (phone)',
 'samsung\-sgh\-x600','Samsung X600 (phone)',
-'samsung\-sgh\-f480','Samsung F480 (phone)',
 'sec\-sghc100','Samsung SGHC100 (phone)',
 'sec\-sghp100','Samsung SGHP100 (phone)',
 'sec\-sghp400','Samsung SGHP400 (phone)',
@@ -1004,7 +1040,6 @@
 'sonyericssont68i','SonyEricsson T68i (phone)',
 'sonyericssont620','SonyEricsson T620 (phone)',
 'sonyericssont630','SonyEricsson T630 (phone)',
-'sonyericssonw910','SonyEricsson W910 (phone)',
 'lg\-c1100','LG C1100 (phone)',
 'lg\-c1200','LG C1200 (phone)',
 'lg\-c2200','LG C2200 (phone)',
@@ -1038,7 +1073,6 @@
 'nokia6630','Nokia 6630 (phone)',
 'nokia6670','Nokia 6670 (phone)',
 'nokia7260','Nokia 7260 (phone)',
-'nokia5310','Nokia 5310 (phone)',
 'sie\-a65','Siemens A65 (phone)',
 'sie\-c65','Siemens C65 (phone)',
 'sie\-c6v','Siemens C6V (phone)',
@@ -1146,20 +1180,25 @@
 'n21i','I-Mode Nec 21i (phone)',
 'n22i','I-Mode Nec 22i (phone)',
 'ts21i','I-Mode Toshiba 21i (phone)',
-# PDA/Phonecell I-Mode browsers
+'wap','Unknown WAP browser (PDA/Phone browser)',			# Generic WAP phone (must be after 'wap*')
+'up\.','UP.Browser (PDA/Phone browser)',					# Works for UP.Browser and UP.Link
+# PDA/Phonecell browsers
+'blackberry','BlackBerry (PDA/Phone browser)',
+'cnf2','Supervision I-Mode ByTel (phone)',
 'docomo','I-Mode phone (PDA/Phone browser)',
 'portalmmm','I-Mode phone (PDA/Phone browser)',
 'ipcheck','Supervision IP Check (phone)',
-'cnf2','Supervision I-Mode ByTel (phone)',
+'iphone','IPhone (PDA/Phone browser)',
 # Others (TV)
 'webtv','WebTV browser',
 # Anonymous Proxy Browsers (can be used as grabbers as well...)
 'cjb\.net','<a href="http://proxy.cjb.net/" title="Browser home page [new window]" target="_blank">CJB.NET Proxy</a>',
 'ossproxy','<a href="http://www.marketscore.com/FAQ.Aspx" title="OSSProxy home page [new window]" target="_blank">OSSProxy</a>',
 # Other kind of browsers
+'adobeair','AdobeAir',
 'apt','Debian APT',
 'analogx_proxy','AnalogX Proxy',
-'gnome\-vfs', 'Gnome FileSystem Abstraction library', 
+'gnome\-vfs', 'Gnome FileSystem Abstraction library',
 'neon', 'Neon HTTP and WebDAV client library',
 'curl','Curl',
 'csscheck','WDG CSS Validator',
@@ -1179,12 +1218,10 @@
 'microsoft\-webdav\-miniredir', 'Microsoft Data Access Component Internet Publishing Provider',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\scache\smanager', 'Microsoft Data Access Component Internet Publishing Provider Cache Manager',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sdav', 'Microsoft Data Access Component Internet Publishing Provider DAV',
-'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sprotocol\sdiscovery', 'Microsoft Data Access Component Internet Publishing Provider Protocol Discovery',
 'POE\-Component\-Client\-HTTP','HTTP user-agent for POE (portable networking framework for Perl)',
 'mozilla','Mozilla',
 'libwww','LibWWW',
-'lwp','LibWWW-perl',
-'java','Java',
+'lwp','LibWWW-perl'
 );
 
 
@@ -1198,15 +1235,17 @@
 'webcopier','1',
 'curl','1',
 'fdm','1',
-'facebookexternalhit','1',
 'httrack','1',
-'java','1',
-'php','1',
 'webreaper','1',
 'wget','1',
 'webdownloader\sfor\sx','1',
-'webzip','1',
+'webzip','1'
+#mod - start
+'facebookexternalhit','1',
 'browsershots','1',
+'php','1',
+'java','1',
+#mod - end
 );
 
 
@@ -1214,13 +1253,22 @@
 # Each Browsers Search ID is associated to a string that is the name of icon
 # file for this browser.
 #---------------------------------------------------------------------------
-%BrowsersHashIcon = (  
+%BrowsersHashIcon = (
+#mod - start
 'ipod','iphone',
 'iphone','iphone',
 'android', 'android',
 'blackberry', 'blackberry',
 'ipx','cog',
 'worldpay','cog',
+'php','php',
+'curl','curl',
+'facebookexternalhit','facebook',
+'newsrob', 'rss',
+'apple\-pubsub','rss',
+'java','java',
+#mod - end
+
 # Standard web browsers
 'msie','msie',
 'netscape','netscape',
@@ -1272,9 +1320,6 @@
 'teleport','teleport',
 'webcapture','adobe',
 'webcopier','webcopier',
-'php','php',
-'curl','curl',
-'facebookexternalhit','facebook',
 # Media only browsers
 'real','real',
 'winamp','mediaplayer',				# Works for winampmpeg and winamp3httprdr
@@ -1293,19 +1338,12 @@
 'xaudio','mediaplayer',
 'xine','mediaplayer',
 'xmms','mediaplayer',
-# PDA/Phonecell I-Mode browsers
-'docomo','pdaphone',
-'portalmmm','pdaphone',
-# Others (TV)
-'webtv','webtv',
-# Anonymous Proxy Browsers (can be used as grabbers as well...)
-'cjb\.net','cjbnet',
 # RSS Readers
 'abilon', 'abilon',
 'aggrevator', 'rss',
+'aiderss', 'rss',
 'akregator', 'rss',
 'applesyndication', 'rss',
-'apple\-pubsub','rss',
 'betanews_reader','rss',
 'blogbridge','rss',
 'feeddemon', 'rss',
@@ -1319,7 +1357,6 @@
 'netnewswire', 'rss',
 'newsfire', 'rss',
 'newsgator', 'rss',
-'newsrob', 'rss',
 'newzcrawler', 'rss',
 'plagger', 'rss',
 'pluck', 'rss',
@@ -1338,13 +1375,41 @@
 'syndirella', 'rss',
 'vienna', 'rss',
 'wizz\srss\snews\sreader','wizz',
+# PDA/Phonecell browsers
+#'alcatel','pdaphone',				# Alcatel
+#'lg\-','pdaphone',                  # LG
+#'ericsson','pdaphone',				# Ericsson
+#'mot\-','pdaphone',					# Motorola
+#'nokia','pdaphone',					# Nokia
+#'panasonic','pdaphone',				# Panasonic
+#'philips','pdaphone',				# Philips
+#'sagem','pdaphone',                 # Sagem
+#'samsung','pdaphone',               # Samsung
+#'sie\-','pdaphone',                 # SIE
+#'sec\-','pdaphone',                 # Sony/Ericsson
+#'sonyericsson','pdaphone',			# Sony/Ericsson
+#'mmef','pdaphone',
+#'mspie','pdaphone',
+#'wapalizer','pdaphone',
+#'wapsilon','pdaphone',
+'wap','pdaphone',					# Generic WAP phone (must be after 'wap*')
+'up\.','pdaphone',
+# PDA/Phonecell browsers
+'blackberry','pdaphone',
+'docomo','pdaphone',
+'iphone','pdaphone',
+'portalmmm','pdaphone',
+# Others (TV)
+'webtv','webtv',
+# Anonymous Proxy Browsers (can be used as grabbers as well...)
+'cjb\.net','cjbnet',
 # Other kind of browsers
+'adobeair','adobe',
 'apt','apt',
 'analogx_proxy','analogx',
 'microsoft\-webdav\-miniredir','frontpage',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\scache\smanager','frontpage',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sdav','frontpage',
-'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sprotocol\sdiscovery','frontpage',
 'gnome\-vfs', 'gnome',
 'neon','neon',
 'javaws','java',
@@ -1357,7 +1422,7 @@
 );
 
 # Source for this is http://developer.apple.com/internet/safari/uamatrix.html
-%BrowsersSafariBuildToVersionHash = 
+%BrowsersSafariBuildToVersionHash =
 (
     '48' => '0.8',
     '51' => '0.8.1',
@@ -1399,7 +1464,7 @@
 # Netscape	4.05	Mozilla/4.05 [fr]C-SYMPA  (Win95; I)
 # Netscape	4.7     Mozilla/4.7 [fr] (Win95; I)
 # Netscape	6.0		Mozilla/5.0 (Macintosh; N; PPC; fr-FR; m18) Gecko/20001108 Netscape6/6.0
-# Netscape	7.02	Mozilla/5.0 (Platform; Security; OS-or-CPU; Localization; rv:1.0.2) Gecko/20030208 Netscape/7.02 
+# Netscape	7.02	Mozilla/5.0 (Platform; Security; OS-or-CPU; Localization; rv:1.0.2) Gecko/20030208 Netscape/7.02
 #
 # -- Gecko others --
 # Mozilla	1.3		Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.3) Gecko/20030312

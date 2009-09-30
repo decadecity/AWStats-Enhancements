@@ -3,11 +3,11 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2008/11/15 14:58:01 $
+# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2009/08/08 11:44:44 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
-#              - added specific Linux distributions in addition to 
-#              the generic Linux.  
+#              - added specific Linux distributions in addition to
+#              the generic Linux.
 #              Included documentation link to Distribution home pages.
 #              - added links for each operating systems.
 
@@ -34,27 +34,35 @@
 'win(.*)95',
 'win(.*)16','windows[_+ ]3',					# This works for windows_31 and windows_3.1
 'win(.*)ce',
-'microsoft',
-'msie[_+ ]',
-'ms[_+ ]frontpage',
 # Macintosh OS family
+#mod - start
 'iphone',
+#mod - end
 'mac[_+ ]os[_+ ]x',
 'mac[_+ ]?p',									# This works for macppc and mac_ppc and mac_powerpc
 'mac[_+ ]68',									# This works for mac_6800 and mac_68k
 'macweb',
 'macintosh',
 # Linux family
+'linux(.*)android',
+#mod - start
+'newsrob',
+#mod - end
+'linux(.*)asplinux',
 'linux(.*)centos',
 'linux(.*)debian',
 'linux(.*)fedora',
 'linux(.*)gentoo',
 'linux(.*)mandr',
+'linux(.*)momonga',
+'linux(.*)pclinuxos',
 'linux(.*)red[_+ ]hat',
 'linux(.*)suse',
 'linux(.*)ubuntu',
-'linux(.*)android',
-'newsrob',
+'linux(.*)vector',
+'linux(.*)vine',
+'linux(.*)white\sbox',
+'linux(.*)zenwalk',
 'linux',
 # Hurd family
 'gnu.hurd',
@@ -64,6 +72,7 @@
 'freebsd',
 'openbsd',
 'netbsd',
+'dragonfly',
 # Other Unix, Unix-like
 'aix',
 'sunos',
@@ -80,6 +89,10 @@
 'atari',
 'vms',
 'commodore',
+'qnx',
+'inferno',
+'palmos',
+'syllable',
 # Miscellanous OS
 'blackberry',
 'cp/m',
@@ -88,17 +101,24 @@
 'risc[_+ ]?os',
 'symbian',
 'webtv',
-'playstation[_+ ]portable',
 'playstation',
 'xbox',
 'wii',
 'vienna',
 'newsfire',
 'applesyndication',
+#mod - start
 'apple\-pubsub',
+#mod - end
 'akregator',
 'plagger',
-'syndirella'
+'syndirella',
+'j2me',
+'java',
+'microsoft',									# Pushed down to prevent mis-identification
+'msie[_+ ]',									# by other OS spoofers.
+'ms[_+ ]frontpage',
+'windows'
 );
 
 
@@ -107,6 +127,10 @@
 # also the name of icon file for this OS.
 #--------------------------------------------------------------------------
 %OSHashID	= (
+#mod - start
+'iphone','iphone',
+'newsrob','android',
+#mod - end
 # Windows OS family
 'windows[_+ ]?2005','winlong','windows[_+ ]nt[_+ ]6\.0','winlong',
 'windows[_+ ]?2008','win2008','windows[_+ ]nt[_+ ]6\.1','win2008',
@@ -124,29 +148,28 @@
 'msie[_+ ]','winunknown',
 'ms[_+ ]frontpage','winunknown',
 # Macintosh OS family
-'iphone','iphone',
-'mac[_+ ]os[_+ ]x','macosx', 
-'vienna','macosx',
-'newsfire', 'macosx',
-'applesyndication', 'macosx',
-'apple\-pubsub', 'macosx',
-'mac[_+ ]?p','macintosh',
-'mac[_+ ]68','macintosh',
-'macweb','macintosh',
-'macintosh','macintosh',
+'mac[_+ ]os[_+ ]x','macosx', 'vienna', 'macosx', 'newsfire', 'macosx', 'applesyndication', 'macosx',
+'mac[_+ ]?p','macintosh','mac[_+ ]68','macintosh','macweb','macintosh','macintosh','macintosh',
 # Linux family (linuxyyy)
+ #mod - start
+'linux(.*)android','android', #ICON
+#mod - end
+'linux(.*)asplinux','linuxasplinux',
 'linux(.*)centos','linuxcentos',
 'linux(.*)debian','linuxdebian',
 'linux(.*)fedora','linuxfedora',
 'linux(.*)gentoo','linuxgentoo',
 'linux(.*)mandr','linuxmandr',
+'linux(.*)momonga','linuxmomonga',
+'linux(.*)pclinuxos','linuxpclinuxos',
 'linux(.*)red[_+ ]hat','linuxredhat',
 'linux(.*)suse','linuxsuse',
 'linux(.*)ubuntu','linuxubuntu',
-'linux(.*)android','android',
-'newsrob','android',
-'linux','linux',
-'akregator', 'linux',
+'linux(.*)vector','linuxvector',
+'linux(.*)vine','linuxvine',
+'linux(.*)white\sbox','linuxwhitebox',
+'linux(.*)zenwalk','linuxzenwalk',
+'linux','linux', 'akregator', 'linux',
 # Hurd family
 'gnu.hurd','gnu',
 # BSDs family (bsdyyy)
@@ -155,6 +178,7 @@
 'freebsd','bsdfreebsd',
 'openbsd','bsdopenbsd',
 'netbsd','bsdnetbsd',
+'dragonflybsd','bsddflybsd',
 # Other Unix, Unix-like
 'aix','aix',
 'sunos','sunos',
@@ -172,6 +196,12 @@
 'atari','atari',
 'vms','vms',
 'commodore','commodore',
+'j2me', 'j2me',
+'java', 'java',
+'qnx','qnx',
+'inferno','inferno',
+'palmos','palmos',
+'syllable','syllable',
 # Miscellanous OS
 'blackberry','blackberry',
 'cp/m','cp/m',
@@ -180,16 +210,21 @@
 'risc[_+ ]?os','riscos',
 'symbian','symbian',
 'webtv','webtv',
-'playstation[_+ ]portable', 'psp',
-'playstation','psp',
+'playstation', 'psp',
 'xbox', 'winxbox',
 'wii', 'wii',
+'windows','winunknown'
 );
 
 # OS name list ('os unique id in lower case','os clear text')
 # Each unique ID string is associated to a label
 #-----------------------------------------------------------
 %OSHashLib      = (
+#mod - start
+'android','<a href="http://code.google.com/android/" title="Google Android home page [new window]" target="_blank">Google Android</a>',
+'iphone','iPhone',
+#mod - end
+
 # Windows family OS
 'winlong','<a href="http://www.microsoft.com/windows/" title="Windows Vista home page [new window]" target="_blank">Windows Vista (LongHorn)</a>',
 'win2008','<a href="http://www.microsoft.com/windowsserver2008/" title="Windows 2008 home page [new window]" target="_blank">Windows 2008</a>',
@@ -206,19 +241,25 @@
 'winunknown','Windows (unknown version)',
 'winxbox','<a href="http://www.xbox.com/" title="Microsoft XBOX home page [new window]" target="_blank">Microsoft XBOX</a>',
 # Macintosh OS
-'iphone','iPhone',
 'macosx','<a href="http://www.apple.com/macosx/" title="Mac OS X home page [new window]" target="_blank">Mac OS X</a>',
 'macintosh','<a href="http://www.apple.com/" title="Mac OS home page [new window]" target="_blank">Mac OS</a>',
 # Linux
+'linuxandroid','<a href="http://code.google.com/android/" title="Google Android home page [new window]" target="_blank">Google Android</a>',
+'linuxasplinux','<a href="http://www.asplinux.ru/" title="ASPLinux home page [new window]" target="_blank">ASPLinux</a>',
 'linuxcentos','<a href="http://www.centos.org/" title="Centos home page [new window]" target="_blank">Centos</a>',
 'linuxdebian','<a href="http://www.debian.org/" title="Debian home page [new window]" target="_blank">Debian</a>',
 'linuxfedora','<a href="http://fedora.redhat.com/" title="Fedora home page [new window]" target="_blank">Fedora</a>',
 'linuxgentoo','<a href="http://www.gentoo.org/" title="Gentoo home page [new window]" target="_blank">Gentoo</a>',
 'linuxmandr','<a href="http://www.mandriva.com/" title="Mandriva (former Mandrake) home page [new window]" target="_blank">Mandriva (or Mandrake)</a>',
+'linuxmomonga','<a href="http://www.momonga-linux.org/" title="Momonga Linux home page [new window]" target="_blank">Momonga Linux</a>',
+'linuxpclinuxos','<a href="http://www.pclinuxos.com/" title="PCLinuxOS home page [new window]" target="_blank">PCLinuxOS</a>',
 'linuxredhat','<a href="http://www.redhat.com/" title="Red Hat home page [new window]" target="_blank">Red Hat</a>',
 'linuxsuse','<a href="http://www.novell.com/linux/suse/" title="Suse home page [new window]" target="_blank">Suse</a>',
 'linuxubuntu','<a href="http://www.ubuntulinux.org/" title="Ubuntu home page [new window]" target="_blank">Ubuntu</a>',
-'android','Android phones',
+'linuxvector','<a href="http://vectorlinux.com/" title="VectorLinux home page [new window]" target="_blank">VectorLinux</a>',
+'linuxvine','<a href="http://www.vinelinux.org/index-en.html" title="Vine Linux home page [new window]" target="_blank">Vine Linux</a>',
+'linuxwhitebox','<a href="http://whiteboxlinux.org/" title="White Box Linux home page [new window]" target="_blank">White Box Linux</a>',
+'linuxzenwalk','<a href="http://www.zenwalk.org/" title="Zenwalk GNU Linux home page [new window]" target="_blank">Zenwalk GNU Linux</a>',
 'linux','<a href="http://www.distrowatch.com/" title="Linux DistroWatch home page. Useful if you find the associated user agent string in your logs. [new window]" target="_blank">Linux (Unknown/unspecified)</a>',
 'linux','GNU Linux (Unknown or unspecified distribution)',
 # Hurd
@@ -232,6 +273,7 @@
 'bsdopenbsd','<a href="http://www.openbsd.org/" title="OpenBSD home page [new window]" target="_blank">OpenBSD</a>',
 'netbsd','<a href="http://www.netbsd.org/" title="NetBSD home page [new window]" target="_blank">NetBSD</a>', # For backard compatibility
 'bsdnetbsd','<a href="http://www.netbsd.org/" title="NetBSD home page [new window]" target="_blank">NetBSD</a>',
+'bsddflybsd','<a href="http://www.dragonflybsd.org/" title="DragonFlyBSD home page [new window]" target="_blank">DragonFlyBSD</a>',
 # Other Unix, Unix-like
 'aix','<a href="http://www-1.ibm.com/servers/aix/" title="Aix home page [new window]" target="_blank">Aix</a>',
 'sunos','<a href="http://www.sun.com/software/solaris/" title="Sun Solaris home page [new window]" target="_blank">Sun Solaris</a>',
@@ -246,16 +288,21 @@
 'atari','<a href="http://www.atarimuseum.com/computers/computers.html" title="Atari home page [new window]" target="_blank">Atari</a>',
 'vms','<a href="http://h71000.www7.hp.com/" title="VMS home page [new window]" target="_blank">VMS</a>',
 'commodore','<a href="http://en.wikipedia.org/wiki/Commodore_64" title="Commodore 64 wikipedia page [new window]" target="_blank">Commodore 64</a>',
+'j2me','<a href="http://mobile.java.com/" title="Java Mobile home page [new window]" target="_blank">Java Mobile</a>',
+'java','<a href="http://www.java.com/" title="Java home page [new window]" target="_blank">Java</a>',
+'qnx','<a href="http://www.qnx.com/products/neutrino_rtos/" title="QNX home page [new window]" target="_blank">QNX</a>',
+'inferno','<a href="http://www.vitanuova.com/inferno/" title="Inferno home page [new window]" target="_blank">Inferno</a>',
+'palmos','<a href="http://www.palm.com/" title="Palm OS home page [new window]" target="_blank">Palm OS</a>',
+'syllable','<a href="http://www.syllable.org/" title="Syllable home page [new window]" target="_blank">Syllable</a>',
 # Miscellanous OS
-'blackberry','Blackberry',
-'cp/m','<a href="http://www.digitalresearch.biz/CPM.HTM" title="CPM home page [new window]" target="_blank">CPM</a>',
+'blackberry','BlackBerry',
+'cp/m','<a href="http://www.digitalresearch.biz/CPM.HTM" title="CP/M home page [new window]" target="_blank">CP/M</a>',
 'crayos','<a href="http://www.cray.com/" title="CrayOS home page [new window]" target="_blank">CrayOS</a>',
 'dreamcast','<a href="http://www.sega.com/" title="Dreamcast home page [new window]" target="_blank">Dreamcast</a>',
 'riscos','<a href="http://www.riscos.com/" title="RISC OS home page [new window]" target="_blank">RISC OS</a>',
 'symbian','<a href="http://www.symbian.com/" title="Symbian OS home page [new window]" target="_blank">Symbian OS</a>',
 'webtv','<a href="http://www.webtv.com/" title="WebTV home page [new window]" target="_blank">WebTV</a>',
-'psp', '<a href="http://www.us.playstation.com/psp" title="Sony PlayStation Portable home page [new window]" target="_blank">Sony PlayStation Portable</a>',
-'playstation', 'Playstation',
+'psp', '<a href="http://www.playstation.com/" title="Sony PlayStation home page [new window]" target="_blank">Sony PlayStation</a>',
 'wii', '<a href="http://wii.opera.com/" title="Opera for Nintendo Wii home page [new window]" target="_blank">Nintendo Wii</a>'
 );
 
@@ -267,8 +314,8 @@
 #  Windows 95 retail, OEM     4.00.950                     7/11/95
 #  Windows 95 retail SP1      4.00.950A                    7/11/95-12/31/95
 #  OEM Service Release 2      4.00.1111* (4.00.950B)       8/24/96
-#  OEM Service Release 2.1    4.03.1212-1214* (4.00.950B)  8/24/96-8/27/97  
+#  OEM Service Release 2.1    4.03.1212-1214* (4.00.950B)  8/24/96-8/27/97
 #  OEM Service Release 2.5    4.03.1214* (4.00.950C)       8/24/96-11/18/97
 #  Windows 98 retail, OEM     4.10.1998                    5/11/98
 #  Windows 98 Second Edition  4.10.2222A                   4/23/99
-#  Windows Me                 4.90.3000 
+#  Windows Me                 4.90.3000

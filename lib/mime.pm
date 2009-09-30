@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeFamily and may be MimeHashLib
 #-------------------------------------------------------
-# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2008/10/05 11:25:27 $
+# $Revision: 1.25 $ - $Author: eldy $ - $Date: 2009/09/05 11:44:25 $
 
 
 #package AWSMIME;
@@ -13,15 +13,17 @@
 # List of mime's label ("mime id in lower case", "mime text")
 #---------------------------------------------------------------
 %MimeHashLib = (
+#mod - start
+'ajax',      'AJAX request',
+'img',       'Asset Image',
+'grav',      'Gravatar Image',
+#mod - end
 'text',      'Text file',
 'page',      'HTML or XML static page',
 'script',    'Dynamic Html page or Script file',
 'pl',        'Dynamic Perl Script file',
 'php',       'Dynamic PHP Script file',
-'ajax',      'AJAX request',
 'image',     'Image',
-'img',       'Asset Image',
-'grav',      'Gravatar Image',
 'document',  'Document',
 'package',   'Package',
 'archive',   'Archive',
@@ -34,7 +36,8 @@
 'xsl',       'Extensible Stylesheet Language file',
 'runtime',   'Binary runtime',
 'library',   'Binary library',
-'swf',       'Macromedia Flash Animation',
+'swf',       'Adobe Flash Animation',
+'flv',       'Adobe Flash Video',
 'dtd',       'Document Type Definition',
 'csv',       'Comma Separated Value file',
 'jnlp',      'Java Web Start launch file',
@@ -52,6 +55,12 @@
 # file for this Mime type.
 #---------------------------------------------------------------------------
 %MimeHashIcon = (
+#mod - start
+'img','image',
+'grav','gravatar',
+'ajax','ajax',
+#mod - end
+
 # Text file
 'txt','text',
 'log','text',
@@ -68,8 +77,8 @@
 'sgml','html',
 # HTML Dynamic pages or script
 'asp','script',
-'aspx','script', 
-'asmx','script', 
+'aspx','script',
+'asmx','script',
 'cfm','script',
 'jsp','script',
 'cgi','script',
@@ -83,7 +92,6 @@
 'shtml','html',
 'tcl','script',
 'xsp','script',
-'ajax','ajax',
 # Image
 'gif','image',
 'png','image',
@@ -94,8 +102,6 @@
 'ico','image',
 'svg','svg',
 'psd','phshop',
-'img','image',
-'grav','gravatar',
 # Document
 'doc','doc',
 'wmz','doc',
@@ -141,6 +147,7 @@
 'mpg','video',
 'rm','real',
 'swf','flash',
+'flv','flash',
 'wmv','video',
 'mov','quicktime',
 'qt','quicktime',
@@ -164,6 +171,12 @@
 
 
 %MimeHashFamily=(
+#mod - start
+'img','image',
+'grav','grav',
+'ajax','ajax',
+#mod - end
+
 # Text file
 'txt','text',
 'log','text',
@@ -179,8 +192,8 @@
 'sgml','page',
 # HTML Dynamic pages or script
 'asp','script',
-'aspx','script', 
-'asmx','script', 
+'aspx','script',
+'asmx','script',
 'cfm','script',
 'jsp','script',
 'cgi','script',
@@ -194,7 +207,6 @@
 'shtml','script',
 'tcl','script',
 'xsp','script',
-'ajax','ajax',
 # Image
 'gif','image',
 'png','image',
@@ -206,8 +218,6 @@
 'svg','svg',
 'psd','phshop',
 'ai','ai',
-'img','img',
-'grav','grav',
 # Document
 'doc','document',
 'wmz','document',
@@ -252,6 +262,7 @@
 'mpg','video',
 'rm','video',
 'swf','swf',
+'flv','flv',
 'wmv','video',
 'mov','video',
 'qt','video',
