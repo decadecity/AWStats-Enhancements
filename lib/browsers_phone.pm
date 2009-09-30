@@ -362,6 +362,9 @@
 'samsung\-sgh\-e800',
 'samsung\-sgh\-x100',
 'samsung\-sgh\-x600',
+#mod - start
+'samsung\-sgh\-f480',
+#mod - end
 'sec\-sghc100',
 'sec\-sghp100',
 'sec\-sghp400',
@@ -486,6 +489,9 @@
 'sonyericssont628',
 'sonyericssonz1010',
 'sonyericssonz200',
+#mod - start
+'sonyericssonw910i',
+#mod - end
 'alcatel\-be3',
 'alcatel\-oh5',
 'alcatel\-th3',
@@ -661,6 +667,9 @@
 
 'facebookexternalhit','<a href="http://www.facebook.com/externalhit_uatext.php" target="_blank">FaceBook external hit</a>',
 'browsershots','<a href="http://browsershots.org/" target="_blank">Browsershots</a>',
+
+'sonyericssonw910i','SonyEricsson T630 (phone)',
+'samsung\-sgh\-f480','Samsung F480 (phone)',
 
 'php','PHP',
 'java','Java',
@@ -1403,9 +1412,7 @@
 #'blackberry','pdaphone',
 #mod - end
 'docomo','pdaphone',
-#mod - start
-#'iphone','pdaphone',
-#mod - end
+'iphone','pdaphone',
 'portalmmm','pdaphone',
 # Others (TV)
 'webtv','webtv',
