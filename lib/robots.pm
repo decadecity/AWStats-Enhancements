@@ -340,8 +340,10 @@
 'bjaaland',
 'contentmatch',
 'ferret',
+#mod - start
 'googlebot-mobile',
 'googlebot-image',
+#mod - end
 'googlebot',
 'google\-sitemaps',
 'gulliver',
@@ -624,7 +626,7 @@
 'w3m2',
 'wallpaper',
 'wanderer',
-'wapspIRLider',
+'wapspider',
 'webbandit',
 'webcatcher',
 'webcopy',
@@ -987,8 +989,6 @@
 'bjaaland','Bjaaland',
 'ferret','Wild Ferret Web Hopper #1, #2, #3',
 'contentmatch','<a href="http://p4p.cn.yahoo.com">Yahoo!China ContentMatch Crawler</a>',
-'googlebot-image','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot Images</a>',
-'googlebot-mobile','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot Mobile</a>',
 'googlebot','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot</a>',
 'google\-sitemaps', 'Google Sitemaps',
 'gulliver','Northern Light Gulliver',
@@ -1377,7 +1377,7 @@
 'enteprise','<a href="http://www.fastsearch.com/" title="Bot home page [new window]" target="_blank">Fast Enteprise Crawler</a>',
 'fast\-search\-engine','<a href="http://www.fast-search-engine.com/" title="Bot home page [new window]" target="_blank">Fast-Search-Engine</a> (not fastsearch.com)',
 'fast_enterprise_crawler','<a href="http://www.fast.no/" title="FAST Enterprise Crawler home page [new window]" target="_blank">FAST Enterprise Crawler</a>',
-'fast_enterprise_crawler.*scrawleradmin\.t\-info@telekom\.de','<a href="http://www.telekom.de/" title="FAST Enterprise Crawler * crawleradmin.t-info@telekom.de home page [new window]" target="_blank">FAST Enterprise Crawler * crawleradmin.t-info@telekom.de</a>',
+'fast_enterprise_crawler.*crawleradmin\.t\-info@telekom\.de','<a href="http://www.telekom.de/" title="FAST Enterprise Crawler * crawleradmin.t-info@telekom.de home page [new window]" target="_blank">FAST Enterprise Crawler * crawleradmin.t-info@telekom.de</a>',
 'matrix_s\.p\.a\._\-_fast_enterprise_crawler','<a href="http://tin.virgilio.it/" title="Matrix S.p.A. - FAST Enterprise Crawler home page [new window]" target="_blank">Matrix S.p.A. - FAST Enterprise Crawler</a>',
 'fast_enterprise_crawler.*t\-info_bi_cluster_crawleradmin\.t\-info@telekom\.de','<a href="http://www.telekom.de/" title="FAST Enterprise Crawler * T-Info_BI_cluster crawleradmin.t-info@telekom.de home page [new window]" target="_blank">FAST Enterprise Crawler * T-Info_BI_cluster crawleradmin.t-info@telekom.de</a>',
 'favorg','<a href="http://www.pcmag.com/article2/0,4149,108438,00.asp" title="FavOrg home page [new window]" target="_blank">FavOrg</a>',
@@ -1616,7 +1616,11 @@
 '[+:,\.\;\/\\\-]bot','Unknown robot (identified by \'*bot\')',
 'no_user_agent','Unknown robot (identified by empty user agent string)',
 # Unknown robots identified by hit on robots.txt
-'unknown', 'Unknown robot (identified by hit on \'robots.txt\')'
+'unknown', 'Unknown robot (identified by hit on \'robots.txt\')',
+#mod - start
+'googlebot-image','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot Images</a>',
+'googlebot-mobile','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot Mobile</a>',
+#mod - end
 );
 
 
@@ -1625,6 +1629,10 @@
 #-------------------------------------------------------------
 %RobotsAffiliateLib = (
 'fast\-webcrawler'=>'AllTheWeb',
+#mod - start
+'googlebot-mobile'=>'Google',
+'googlebot-image'=>'Google',
+#mod - end
 'googlebot'=>'Google',
 'google\-sitemap'=>'Google',
 'msnbot'=>'MSN',

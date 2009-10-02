@@ -179,7 +179,7 @@
 'freebsd','bsdfreebsd',
 'openbsd','bsdopenbsd',
 'netbsd','bsdnetbsd',
-'dragonflybsd','bsddflybsd',
+'dragonfly','bsddflybsd',
 # Other Unix, Unix-like
 'aix','aix',
 'sunos','sunos',
