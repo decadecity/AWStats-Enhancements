@@ -49,6 +49,7 @@
 'android',
 'ipx',
 'worldpay',
+'google_wireless_transcoder',
 #mod - end
 
 # Other standard web browsers
@@ -500,6 +501,8 @@
 'iphone','iPhone',
 'android','Android',
 
+'google_wireless_transcoder','<a href="http://google.com/gwt/n" target="_blank">Google Wireless Transcoder for mobiles</a>',
+
 'ipx','IPX',
 'worldpay','WorldPay',
 
@@ -722,6 +725,7 @@
 'blackberry', 'blackberry',
 'ipx','cog',
 'worldpay','cog',
+'google_wireless_transcoder','pdaphone',
 'php','php',
 'curl','curl',
 'facebookexternalhit','facebook',
