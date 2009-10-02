@@ -362,9 +362,6 @@
 'samsung\-sgh\-e800',
 'samsung\-sgh\-x100',
 'samsung\-sgh\-x600',
-#mod - start
-'samsung\-sgh\-f480',
-#mod - end
 'sec\-sghc100',
 'sec\-sghp100',
 'sec\-sghp400',
@@ -489,9 +486,6 @@
 'sonyericssont628',
 'sonyericssonz1010',
 'sonyericssonz200',
-#mod - start
-'sonyericssonw910i',
-#mod - end
 'alcatel\-be3',
 'alcatel\-oh5',
 'alcatel\-th3',
@@ -591,9 +585,7 @@
 'cnf2',
 'docomo',
 'ipcheck',
-#mod - start
-#'iphone',
-#mod - end
+'iphone',
 'portalmmm',
 # Others (TV)
 'webtv',
@@ -627,7 +619,7 @@
 'POE\-Component\-Client\-HTTP',
 'mozilla',				# Must be at end because a lot of browsers contains mozilla in string
 'libwww',				# Must be at end because some browser have both 'browser id' and 'libwww'
-'lwp',
+'lwp'
 #mod - start
 'java',
 'php',
@@ -667,9 +659,6 @@
 
 'facebookexternalhit','<a href="http://www.facebook.com/externalhit_uatext.php" target="_blank">FaceBook external hit</a>',
 'browsershots','<a href="http://browsershots.org/" target="_blank">Browsershots</a>',
-
-'sonyericssonw910i','SonyEricsson T630 (phone)',
-'samsung\-sgh\-f480','Samsung F480 (phone)',
 
 'php','PHP',
 'java','Java',
@@ -1199,9 +1188,7 @@
 'docomo','I-Mode phone (PDA/Phone browser)',
 'portalmmm','I-Mode phone (PDA/Phone browser)',
 'ipcheck','Supervision IP Check (phone)',
-#mod - start
-#'iphone','IPhone (PDA/Phone browser)',
-#mod - end
+'iphone','IPhone (PDA/Phone browser)',
 # Others (TV)
 'webtv','WebTV browser',
 # Anonymous Proxy Browsers (can be used as grabbers as well...)
@@ -1252,7 +1239,7 @@
 'webreaper','1',
 'wget','1',
 'webdownloader\sfor\sx','1',
-'webzip','1',
+'webzip','1'
 #mod - start
 'facebookexternalhit','1',
 'browsershots','1',
@@ -1408,9 +1395,7 @@
 'wap','pdaphone',					# Generic WAP phone (must be after 'wap*')
 'up\.','pdaphone',
 # PDA/Phonecell browsers
-#mod - start
-#'blackberry','pdaphone',
-#mod - end
+'blackberry','pdaphone',
 'docomo','pdaphone',
 'iphone','pdaphone',
 'portalmmm','pdaphone',
