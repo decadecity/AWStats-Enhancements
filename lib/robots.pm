@@ -387,6 +387,7 @@
 @RobotsSearchIDOrder_list2 = (
 #mod - start
 'twitturly',
+'winhttp',
 #mod - end
 # Less common robots (In robot file)
 '[^a]fish',
@@ -1624,6 +1625,7 @@
 'googlebot-image','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot Images</a>',
 'googlebot-mobile','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot Mobile</a>',
 'twitturly','<a href="http://twitturly.com/about/" target="_blank">Twitturly twitter link tracker</a>',
+'winhttp','Unknown, suspected bot',
 #mod - end
 );
 
