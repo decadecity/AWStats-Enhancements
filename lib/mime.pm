@@ -177,7 +177,7 @@
 'img','img',
 'grav','grav',
 'ajax','ajax',
-'rdf','page',
+'rdf','rdf',
 #mod - end
 
 # Text file
