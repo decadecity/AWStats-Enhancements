@@ -17,6 +17,7 @@
 'ajax',      'AJAX request',
 'img',       'Asset Image',
 'grav',      'Gravatar Image',
+'rdf',       'Resource Description File',
 #mod - end
 'text',      'Text file',
 'page',      'HTML or XML static page',
@@ -59,6 +60,7 @@
 'img','image',
 'grav','gravatar',
 'ajax','ajax',
+'rdf','rdf',
 #mod - end
 
 # Text file
@@ -175,6 +177,7 @@
 'img','img',
 'grav','grav',
 'ajax','ajax',
+'rdf','page',
 #mod - end
 
 # Text file
