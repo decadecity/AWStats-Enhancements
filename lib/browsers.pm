@@ -226,6 +226,7 @@
 'docomo',
 #mod - start
 #'iphone',
+'hiptop',
 #mod - end
 'portalmmm',
 # Others (TV)
@@ -506,6 +507,8 @@
 
 'google_wireless_transcoder','<a href="http://google.com/gwt/n" target="_blank">Google Wireless Transcoder for mobiles</a>',
 
+'hiptop','Sidekick',
+
 'ipx','IPX',
 'worldpay','WorldPay',
 
@@ -729,6 +732,7 @@
 'ipx','cog',
 'worldpay','cog',
 'google_wireless_transcoder','pdaphone',
+'hiptop','pdaphone',
 'php','php',
 'curl','curl',
 'facebookexternalhit','facebook',

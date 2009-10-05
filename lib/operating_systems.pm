@@ -104,6 +104,10 @@
 'playstation',
 'xbox',
 'wii',
+#mod - start
+'nintendo[_+ ]dsi',
+'danger',
+#mod - end
 'vienna',
 'newsfire',
 'applesyndication',
@@ -131,6 +135,8 @@
 'iphone','iphone',
 'newsrob','android',
 'apple\-pubsub','macosx',
+'nintendo[_+ ]dsi','nintendo-dsi',
+'danger','danger',
 #mod - end
 # Windows OS family
 'windows[_+ ]?2005','winlong','windows[_+ ]nt[_+ ]6\.0','winlong',
@@ -225,6 +231,8 @@
 'android','<a href="http://code.google.com/android/" title="Google Android home page [new window]" target="_blank">Google Android</a>',
 'iphone','iPhone',
 'apple\-pubsub','OSX news reader',
+'nintendo[_+ ]dsi','Nintendo DSi',
+'danger','<a href="http://http://www.danger.com/" target="_blank">DangerOS</a>',
 #mod - end
 
 # Windows family OS

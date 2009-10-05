@@ -388,6 +388,7 @@
 #mod - start
 'twitturly',
 'winhttp',
+'labs.topsy.com\/butterfly\.html',
 #mod - end
 # Less common robots (In robot file)
 '[^a]fish',
@@ -1626,6 +1627,7 @@
 'googlebot-mobile','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot Mobile</a>',
 'twitturly','<a href="http://twitturly.com/about/" target="_blank">Twitturly twitter link tracker</a>',
 'winhttp','Unknown, suspected bot',
+'labs.topsy.com\/butterfly\.html','Butterfly bot',
 #mod - end
 );
 
