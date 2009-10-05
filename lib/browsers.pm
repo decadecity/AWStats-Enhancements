@@ -50,6 +50,7 @@
 'ipx',
 'worldpay',
 'google_wireless_transcoder',
+'moozilla',
 #mod - end
 
 # Other standard web browsers
@@ -501,6 +502,8 @@
 'iphone','iPhone',
 'android','Android',
 
+'moozilla','<a href="http://www.moo.ca/moozilla" target="_blank">Moozilla</a>',
+
 'google_wireless_transcoder','<a href="http://google.com/gwt/n" target="_blank">Google Wireless Transcoder for mobiles</a>',
 
 'ipx','IPX',
@@ -732,6 +735,7 @@
 'newsrob', 'rss',
 'apple\-pubsub','rss',
 'java','java',
+'moozilla','moozilla',
 #mod - end
 );
 
