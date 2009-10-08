@@ -134,6 +134,7 @@
 #mod - start
 'facebookexternalhit',
 'browsershots',
+'plesk',
 #mod - end
 
 # Media only browsers
@@ -517,6 +518,7 @@
 
 'facebookexternalhit','<a href="http://www.facebook.com/externalhit_uatext.php" target="_blank">FaceBook external hit</a>',
 'browsershots','<a href="http://browsershots.org/" target="_blank">Browsershots</a>',
+'plesk','Plesk control panel',
 
 'php','PHP',
 'java','Java',
@@ -543,6 +545,7 @@
 'browsershots','1',
 'php','1',
 'java','1',
+'plesk','1',
 #mod - end
 );
 
@@ -740,6 +743,7 @@
 'apple\-pubsub','rss',
 'java','java',
 'moozilla','moozilla',
+'plesk','plesk'
 #mod - end
 );
 
