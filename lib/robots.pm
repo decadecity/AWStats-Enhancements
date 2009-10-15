@@ -389,6 +389,7 @@
 'twitturly',
 'winhttp',
 'labs.topsy.com\/butterfly\.html',
+'metadata_scaper',
 #mod - end
 # Less common robots (In robot file)
 '[^a]fish',
@@ -1628,6 +1629,7 @@
 'twitturly','<a href="http://twitturly.com/about/" target="_blank">Twitturly twitter link tracker</a>',
 'winhttp','Unknown, suspected bot',
 'labs.topsy.com\/butterfly\.html','Butterfly bot',
+'metadata_scraper','<a href="http://wiki.creativecommons.org/Metadata_Scraper">Creative Commons Metadata Scraper</a>',
 #mod - end
 );
 
