@@ -51,6 +51,10 @@
 'worldpay',
 'google_wireless_transcoder',
 'moozilla',
+'thunderbird',
+'outlook-express',
+'outlook',
+'evolution',
 #mod - end
 
 # Other standard web browsers
@@ -503,8 +507,11 @@
 'ipod','iPod',
 'iphone','iPhone',
 'android','Android',
-
+'thunderbird','Thunderbird',
+'outlook-express','Outlook Express',
+'outlook','Outlook',
 'moozilla','<a href="http://www.moo.ca/moozilla" target="_blank">Moozilla</a>',
+'evolution','Evolution',
 
 'google_wireless_transcoder','<a href="http://google.com/gwt/n" target="_blank">Google Wireless Transcoder for mobiles</a>',
 
@@ -743,7 +750,11 @@
 'apple\-pubsub','rss',
 'java','java',
 'moozilla','moozilla',
-'plesk','plesk'
+'plesk','plesk',
+'thunderbird','thunderbird',
+'outlook','outlook',
+'outlook-express','outlook-express',
+'evolution','evolution',
 #mod - end
 );
 
