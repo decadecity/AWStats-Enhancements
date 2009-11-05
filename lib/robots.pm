@@ -694,6 +694,9 @@
 'blogslive',
 'blogssay',
 'bncf\.firenze\.sbn\.it\/raccolta\.txt',
+#mod - start?
+'bpimagewalker',
+#mod - end
 'bobby',
 'boitho\.com\-dc',
 'bookmark\-manager',
@@ -1068,7 +1071,6 @@
 'backrub','BackRub',
 'bbot','BBot',
 'bigbrother','Big Brother',
-'bitlybot','Bit.ly Bot',
 'blackwidow','BlackWidow',
 'blindekuh','Die Blinde Kuh',
 'bloodhound','Bloodhound',
