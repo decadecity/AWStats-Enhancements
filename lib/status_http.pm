@@ -3,7 +3,7 @@
 # If you want to add a HTTP status code, you must add
 # an entry in httpcodelib.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2008/11/06 21:11:05 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2009/06/03 19:05:31 $
 
 
 #package AWSHTTPCODES;
@@ -38,7 +38,7 @@
 '401'=>'Unauthorized',
 '402'=>'Payment required',
 '403'=>'Forbidden',
-'404'=>'Document Not Found',
+'404'=>'Document Not Found (hits on favicon excluded)',
 '405'=>'Method not allowed',
 '406'=>'Document not acceptable to client',
 '407'=>'Proxy authentication required',

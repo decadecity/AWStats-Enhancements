@@ -3,11 +3,11 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2009/08/08 11:44:44 $
+# $Revision: 1.28 $ - $Author: eldy $ - $Date: 2009/10/25 11:32:50 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
-#              - added specific Linux distributions in addition to
-#              the generic Linux.
+#              - added specific Linux distributions in addition to 
+#              the generic Linux.  
 #              Included documentation link to Distribution home pages.
 #              - added links for each operating systems.
 
@@ -35,19 +35,14 @@
 'win(.*)16','windows[_+ ]3',					# This works for windows_31 and windows_3.1
 'win(.*)ce',
 # Macintosh OS family
-#mod - start
-'iphone',
-#mod - end
 'mac[_+ ]os[_+ ]x',
 'mac[_+ ]?p',									# This works for macppc and mac_ppc and mac_powerpc
 'mac[_+ ]68',									# This works for mac_6800 and mac_68k
 'macweb',
 'macintosh',
+'iphone[ +]os',
 # Linux family
 'linux(.*)android',
-#mod - start
-'newsrob',
-#mod - end
 'linux(.*)asplinux',
 'linux(.*)centos',
 'linux(.*)debian',
@@ -113,6 +108,7 @@
 'applesyndication',
 #mod - start
 'apple\-pubsub',
+'newsrob',
 #mod - end
 'akregator',
 'plagger',
@@ -132,7 +128,7 @@
 #--------------------------------------------------------------------------
 %OSHashID	= (
 #mod - start
-'iphone','iphone',
+'iphone[ +]os','iphone',
 'newsrob','android',
 'apple\-pubsub','macosx',
 'nintendo[_+ ]dsi','nintendo-dsi',
@@ -324,8 +320,8 @@
 #  Windows 95 retail, OEM     4.00.950                     7/11/95
 #  Windows 95 retail SP1      4.00.950A                    7/11/95-12/31/95
 #  OEM Service Release 2      4.00.1111* (4.00.950B)       8/24/96
-#  OEM Service Release 2.1    4.03.1212-1214* (4.00.950B)  8/24/96-8/27/97
+#  OEM Service Release 2.1    4.03.1212-1214* (4.00.950B)  8/24/96-8/27/97  
 #  OEM Service Release 2.5    4.03.1214* (4.00.950C)       8/24/96-11/18/97
 #  Windows 98 retail, OEM     4.10.1998                    5/11/98
 #  Windows 98 Second Edition  4.10.2222A                   4/23/99
-#  Windows Me                 4.90.3000
+#  Windows Me                 4.90.3000 

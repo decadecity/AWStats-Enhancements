@@ -79,8 +79,8 @@
 'sgml','html',
 # HTML Dynamic pages or script
 'asp','script',
-'aspx','script',
-'asmx','script',
+'aspx','script', 
+'asmx','script', 
 'cfm','script',
 'jsp','script',
 'cgi','script',
@@ -195,8 +195,8 @@
 'sgml','page',
 # HTML Dynamic pages or script
 'asp','script',
-'aspx','script',
-'asmx','script',
+'aspx','script', 
+'asmx','script', 
 'cfm','script',
 'jsp','script',
 'cgi','script',

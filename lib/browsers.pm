@@ -3,10 +3,9 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2009/08/08 11:48:45 $
+# $Revision: 1.65 $ - $Author: eldy $ - $Date: 2009/10/25 11:20:49 $
 
-# Originale version by malu
-# 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html
+# 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
 # 				akregator (rss)
 #				AppleSyndication  (rss)
 #				BlogBridge http://www.blogbridge.com/ (rss)
@@ -22,6 +21,7 @@
 #				Potu Rss-Reader http://www.potu.com/
 #				OSSProxy http://www.marketscore.com/FAQ.Aspx
 
+		
 #package AWSUA;
 
 
@@ -32,16 +32,15 @@
 # Note: Regex IDs are in lower case and ' ' and '+' are changed into '_'
 #-------------------------------------------------------
 @BrowsersSearchIDOrder = (
-# Most frequent standard web browsers are first in this list (except msie, netscape and firefox)
-'chrome',
+# Most frequent standard web browsers are first in this list except the ones hardcoded in awstats.pl:
+# firefox, opera, chrome, safari, konqueror, svn, msie, netscape
+'elinks',
 'firebird',
 'go!zilla',
 'icab',
-'konqueror',
 'links',
 'lynx',
 'omniweb',
-'opera',
 
 #mod - start
 'ipod',
@@ -122,7 +121,6 @@
 'emacs\-w3',
 'phoenix',
 'shiira',               # Must be before safari
-'safari',				# Must be after a lot of others (shiira, chrome)
 'tzgeturl',
 'viking',
 'webfetcher',
@@ -176,33 +174,33 @@
 'betanews_reader',
 'blogbridge',
 'cyndicate',
-'feeddemon',
-'feedreader',
+'feeddemon', 
+'feedreader', 
 'feedtools',
 'greatnews',
 'gregarius',
-'hatena_rss',
-'jetbrains_omea',
+'hatena_rss', 
+'jetbrains_omea', 
 'liferea',
-'netnewswire',
-'newsfire',
-'newsgator',
+'netnewswire', 
+'newsfire', 
+'newsgator', 
 'newzcrawler',
 'plagger',
-'pluck',
+'pluck', 
 'potu',
 'pubsub\-rss\-reader',
-'pulpfiction',
-'rssbandit',
+'pulpfiction', 
+'rssbandit', 
 'rssreader',
-'rssowl',
+'rssowl', 
 'rss\sxpress',
 'rssxpress',
-'sage',
-'sharpreader',
-'shrook',
-'straw',
-'syndirella',
+'sage', 
+'sharpreader', 
+'shrook', 
+'straw', 
+'syndirella', 
 'vienna',
 'wizz\srss\snews\sreader',
 # PDA/Phonecell browsers
@@ -228,6 +226,7 @@
 'up\.',					# Works for UP.Browser and UP.Link
 # PDA/Phonecell browsers
 'blackberry',
+'cnf2',
 'docomo',
 #mod - start
 #'iphone',
@@ -263,10 +262,10 @@
 'webreaper',
 'webzip',
 'staroffice',
-'gnus',
-'nikto',
+'gnus', 
+'nikto', 
 'download\smaster',
-'microsoft\-webdav\-miniredir',
+'microsoft\-webdav\-miniredir', 
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\scache\smanager',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sdav',
 'POE\-Component\-Client\-HTTP',
@@ -283,23 +282,24 @@
 # List of browser's name ('browser id in lower case', 'browser text')
 #---------------------------------------------------------------
 %BrowsersHashIDLib = (
-# Common web browsers text
+# Common web browsers text, included the ones hard coded in awstats.pl
+# firefox, opera, chrome, safari, konqueror, svn, msie, netscape
+'firefox','Firefox',
+'opera','Opera',
+'chrome','Google Chrome',
+'safari','Safari',
+'konqueror','Konqueror',
+'svn', 'Subversion client', 
 'msie','MS Internet Explorer',
 'netscape','Netscape',
-'firefox','Firefox',
-'svn', 'Subversion client',
 
-'chrome','Google Chrome',
+'elinks','ELinks',
 'firebird','Firebird (Old Firefox)',
 'go!zilla','Go!Zilla',
 'icab','iCab',
-'konqueror','Konqueror',
 'links','Links',
 'lynx','Lynx',
 'omniweb','OmniWeb',
-'opera','Opera',
-
-
 # Other standard web browsers
 '22acidownload','22AciDownload',
 'abrowse','ABrowse',
@@ -365,7 +365,6 @@
 'contiki','Contiki',
 'emacs\-w3','Emacs/w3s',
 'shiira','Shiira',
-'safari','Safari',
 'tzgeturl','TzGetURL',
 'viking','Viking',
 'webfetcher','WebFetcher',
@@ -401,7 +400,7 @@
 'abilon','Abilon (RSS Reader)',
 'aggrevator', 'Aggrevator (RSS Reader)',
 'aiderss', 'AideRSS (RSS Reader)',
-'akregator','<a href="http://akregator.sourceforge.net/" title="Browser home page [new window]" target="_blank">Akregator (RSS Reader)</a>',
+'akregator','<a href="http://akregator.sourceforge.net/" title="Browser home page [new window]" target="_blank">Akregator (RSS Reader)</a>',  
 'applesyndication','<a href="http://www.apple.com/macosx/features/safari/" title="Browser home page [new window]" target="_blank">AppleSyndication (RSS Reader)</a>',
 'betanews_reader','Betanews Reader (RSS Reader)',
 'blogbridge','<a href="http://www.blogbridge.com/" title="Browser home page [new window]" target="_blank">BlogBridge (RSS Reader)</a>',
@@ -433,7 +432,7 @@
 'shrook', 'Shrook (RSS Reader)',
 'straw', 'Straw (RSS Reader)',
 'syndirella', 'Syndirella (RSS Reader)',
-'vienna', '<a href="http://www.opencommunity.co.uk/vienna2.php" title="Vienna RSS-Reader [new window]" target="_blank">Vienna (RSS Reader)</a>',
+'vienna', '<a href="http://www.vienna-rss.org/" title="Vienna RSS-Reader [new window]" target="_blank">Vienna (RSS Reader)</a>',
 'wizz\srss\snews\sreader','Wizz RSS News Reader (RSS Reader)',
 # PDA/Phonecell browsers
 'alcatel','Alcatel Browser (PDA/Phone browser)',
@@ -458,6 +457,7 @@
 'up\.','UP.Browser (PDA/Phone browser)',					# Works for UP.Browser and UP.Link
 # PDA/Phonecell browsers
 'blackberry','BlackBerry (PDA/Phone browser)',
+'cnf2','Supervision I-Mode ByTel (phone)',
 'docomo','I-Mode phone (PDA/Phone browser)',
 #'iphone','IPhone (PDA/Phone browser)',
 'portalmmm','I-Mode phone (PDA/Phone browser)',
@@ -472,8 +472,8 @@
 'adobeair','AdobeAir',
 'apt','Debian APT',
 'analogx_proxy','AnalogX Proxy',
-'gnome\-vfs', 'Gnome FileSystem Abstraction library',
-'neon', 'Neon HTTP and WebDAV client library',
+'gnome\-vfs', 'Gnome FileSystem Abstraction library', 
+'neon', 'Neon HTTP and WebDAV client library', 
 'curl','Curl',
 'csscheck','WDG CSS Validator',
 'httrack','HTTrack',
@@ -491,7 +491,7 @@
 'webzip','WebZIP',
 'staroffice','StarOffice',
 'gnus', 'Gnus Network User Services',
-'nikto', 'Nikto Web Scanner',
+'nikto', 'Nikto Web Scanner', 
 'download\smaster','Download Master',
 'microsoft\-webdav\-miniredir', 'Microsoft Data Access Component Internet Publishing Provider',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\scache\smanager', 'Microsoft Data Access Component Internet Publishing Provider Cache Manager',
@@ -545,6 +545,8 @@
 'httrack','1',
 'webreaper','1',
 'wget','1',
+'fget','1',
+'download\smaster','1',
 'webdownloader\sfor\sx','1',
 'webzip','1',
 #mod - start
@@ -562,20 +564,22 @@
 # file for this browser.
 #---------------------------------------------------------------------------
 %BrowsersHashIcon = (
-# Standard web browsers
+# Common web browsers text, included the ones hard coded in awstats.pl
+# firefox, opera, chrome, safari, konqueror, svn, msie, netscape
+'firefox','firefox',
+'opera','opera',
+'chrome','chrome', 
+'safari','safari',
+'konqueror','konqueror',
+'svn','subversion',
 'msie','msie',
 'netscape','netscape',
-'firefox','firefox',
-'svn','subversion',
 
-'chrome','chrome',
 'firebird','phoenix',
 'go!zilla','gozilla',
 'icab','icab',
-'konqueror','konqueror',
 'lynx','lynx',
 'omniweb','omniweb',
-'opera','opera',
 # Other standard web browsers
 'amaya','amaya',
 'amigavoyager','amigavoyager',
@@ -622,7 +626,6 @@
 'ncsa_mosaic','ncsa_mosaic',
 'netpositive','netpositive',
 'phoenix','phoenix',
-'safari','safari',
 # Site grabbers
 'teleport','teleport',
 'webcapture','adobe',
@@ -722,8 +725,8 @@
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sprotocol\sdiscovery','frontpage',
 'microsoft\soffice\sprotocol\sdiscovery','frontpage',
 'microsoft\soffice\sexistence\sdiscovery','frontpage',
-'gnome\-vfs', 'gnome',
-'neon','neon',
+'gnome\-vfs', 'gnome', 
+'neon','neon', 
 'javaws','java',
 'webzip','webzip',
 'webreaper','webreaper',
@@ -759,7 +762,7 @@
 );
 
 # Source for this is http://developer.apple.com/internet/safari/uamatrix.html
-%BrowsersSafariBuildToVersionHash =
+%BrowsersSafariBuildToVersionHash = 
 (
     '48' => '0.8',
     '51' => '0.8.1',
@@ -798,10 +801,10 @@
 # MSIE		4.0  	Mozilla/4.0 (compatible; MSIE 5.0; Windows 98; DigExt; KITV4 Wanadoo; KITV5 Wanadoo)
 #
 # -- Gecko Netscape --
-# Netscape	4.05	Mozilla/4.05 [fr]C-SYMPA  (Win95; I)
+# Netscape	4.05	Mozilla/4.05 [fr]C-SYMPA (Win95; I)
 # Netscape	4.7     Mozilla/4.7 [fr] (Win95; I)
 # Netscape	6.0		Mozilla/5.0 (Macintosh; N; PPC; fr-FR; m18) Gecko/20001108 Netscape6/6.0
-# Netscape	7.02	Mozilla/5.0 (Platform; Security; OS-or-CPU; Localization; rv:1.0.2) Gecko/20030208 Netscape/7.02
+# Netscape	7.02	Mozilla/5.0 (Platform; Security; OS-or-CPU; Localization; rv:1.0.2) Gecko/20030208 Netscape/7.02 
 #
 # -- Gecko others --
 # Mozilla	1.3		Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.3) Gecko/20030312
