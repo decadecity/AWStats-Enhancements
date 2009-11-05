@@ -47,7 +47,21 @@ do 'robots.pm';
 foreach (@RobotsSearchIDOrder_list1) {
  $test = $_;
  if (!grep $_ eq $test, %RobotsHashIDLib) {
-   print "[$test] not found in RobotsHashIDLib\n";
+   print "[$test] not found in RobotsHashIDLib (list1)\n";
+ }
+}
+
+foreach (@RobotsSearchIDOrder_list2) {
+ $test = $_;
+ if (!grep $_ eq $test, %RobotsHashIDLib) {
+   print "[$test] not found in RobotsHashIDLib (list2)\n";
+ }
+}
+
+foreach (@RobotsSearchIDOrder_listgen) {
+ $test = $_;
+ if (!grep $_ eq $test, %RobotsHashIDLib) {
+   print "[$test] not found in RobotsHashIDLib (listgen)\n";
  }
 }
 

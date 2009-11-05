@@ -388,7 +388,7 @@
 'twitturly',
 'winhttp',
 'labs.topsy.com\/butterfly\.html',
-'metadata_scaper',
+'metadata_scraper',
 #mod - end
 # Less common robots (In robot file)
 '[^a]fish',
@@ -630,7 +630,7 @@
 'w3m2',
 'wallpaper',
 'wanderer',
-'wapspIRLider',
+'wapspider',
 'webbandit',
 'webcatcher',
 'webcopy',
@@ -1400,7 +1400,7 @@
 'enteprise','<a href="http://www.fastsearch.com/" title="Bot home page [new window]" target="_blank">Fast Enteprise Crawler</a>',
 'fast\-search\-engine','<a href="http://www.fast-search-engine.com/" title="Bot home page [new window]" target="_blank">Fast-Search-Engine</a> (not fastsearch.com)',
 'fast_enterprise_crawler','<a href="http://www.fast.no/" title="FAST Enterprise Crawler home page [new window]" target="_blank">FAST Enterprise Crawler</a>',
-'fast_enterprise_crawler.*scrawleradmin\.t\-info@telekom\.de','<a href="http://www.telekom.de/" title="FAST Enterprise Crawler * crawleradmin.t-info@telekom.de home page [new window]" target="_blank">FAST Enterprise Crawler * crawleradmin.t-info@telekom.de</a>',
+'fast_enterprise_crawler.*crawleradmin\.t\-info@telekom\.de','<a href="http://www.telekom.de/" title="FAST Enterprise Crawler * crawleradmin.t-info@telekom.de home page [new window]" target="_blank">FAST Enterprise Crawler * crawleradmin.t-info@telekom.de</a>',
 'matrix_s\.p\.a\._\-_fast_enterprise_crawler','<a href="http://tin.virgilio.it/" title="Matrix S.p.A. - FAST Enterprise Crawler home page [new window]" target="_blank">Matrix S.p.A. - FAST Enterprise Crawler</a>',
 'fast_enterprise_crawler.*t\-info_bi_cluster_crawleradmin\.t\-info@telekom\.de','<a href="http://www.telekom.de/" title="FAST Enterprise Crawler * T-Info_BI_cluster crawleradmin.t-info@telekom.de home page [new window]" target="_blank">FAST Enterprise Crawler * T-Info_BI_cluster crawleradmin.t-info@telekom.de</a>',
 'favicon','FavIconizer',
