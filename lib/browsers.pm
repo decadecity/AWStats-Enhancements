@@ -54,6 +54,8 @@
 'outlook-express',
 'outlook',
 'evolution',
+'eudora',
+'clamav',
 #mod - end
 
 # Other standard web browsers
@@ -511,7 +513,8 @@
 'outlook-express','Outlook Express',
 'outlook','Outlook',
 'moozilla','<a href="http://www.moo.ca/moozilla" target="_blank">Moozilla</a>',
-'evolution','Evolution',
+'evolution','Evolution mail',
+'eudora','Eudora mail',
 
 'google_wireless_transcoder','<a href="http://google.com/gwt/n" target="_blank">Google Wireless Transcoder for mobiles</a>',
 
@@ -526,6 +529,8 @@
 'facebookexternalhit','<a href="http://www.facebook.com/externalhit_uatext.php" target="_blank">FaceBook external hit</a>',
 'browsershots','<a href="http://browsershots.org/" target="_blank">Browsershots</a>',
 'plesk','Plesk control panel',
+
+'clamav', 'Clam Anti Virus',
 
 'php','PHP',
 'java','Java',
@@ -555,6 +560,7 @@
 'php','1',
 'java','1',
 'plesk','1',
+'clamav','1',
 #mod - end
 );
 
@@ -758,6 +764,8 @@
 'outlook','outlook',
 'outlook-express','outlook-express',
 'evolution','evolution',
+'eudora', 'eudora',
+'clamav', 'clamscan'
 #mod - end
 );
 
