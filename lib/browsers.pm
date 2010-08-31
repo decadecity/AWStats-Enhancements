@@ -139,6 +139,7 @@
 'facebookexternalhit',
 'browsershots',
 'plesk',
+'google-site-verification',
 #mod - end
 
 # Media only browsers
@@ -517,6 +518,7 @@
 'eudora','Eudora mail',
 
 'google_wireless_transcoder','<a href="http://google.com/gwt/n" target="_blank">Google Wireless Transcoder for mobiles</a>',
+'google-site-verification','Google site verification',
 
 'hiptop','Sidekick',
 
@@ -560,6 +562,7 @@
 'php','1',
 'java','1',
 'plesk','1',
+'google-site-verification','1',
 'clamav','1',
 #mod - end
 );

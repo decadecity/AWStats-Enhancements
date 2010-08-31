@@ -389,6 +389,9 @@
 'winhttp',
 'labs.topsy.com\/butterfly\.html',
 'metadata_scraper',
+'js-kit\.com',
+'postrank\.com',
+'twingly_recon',
 #mod - end
 # Less common robots (In robot file)
 '[^a]fish',
@@ -1662,6 +1665,9 @@
 'winhttp','Unknown, suspected bot',
 'labs.topsy.com\/butterfly\.html','Butterfly bot',
 'metadata_scraper','<a href="http://wiki.creativecommons.org/Metadata_Scraper">Creative Commons Metadata Scraper</a>',
+'js-kit\.com','<a href="http://aboutecho.com/">JS-kit.com</a>',
+'postrank\.com','<a href="http://www.postrank.com/">Postrank</a>',
+'twingly_recon','<a href="http://www.twingly.com/">Twingly</a>',
 #mod - end
 );
 
