@@ -140,6 +140,7 @@
 'browsershots',
 'plesk',
 'google-site-verification',
+'validator\.nu',
 #mod - end
 
 # Media only browsers
@@ -532,6 +533,8 @@
 'browsershots','<a href="http://browsershots.org/" target="_blank">Browsershots</a>',
 'plesk','Plesk control panel',
 
+'validator\.nu','HTML5 validator',
+
 'clamav', 'Clam Anti Virus',
 
 'php','PHP',
@@ -564,6 +567,7 @@
 'plesk','1',
 'google-site-verification','1',
 'clamav','1',
+'validator\.nu',1,
 #mod - end
 );
 
