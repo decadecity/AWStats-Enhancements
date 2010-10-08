@@ -168,6 +168,7 @@
 #mod- start
 'apple\-pubsub',
 'newsrob',
+'simplepie',
 #mod - end
 
 'abilon',
@@ -528,6 +529,7 @@
 
 'newsrob', 'NewsRob (RSS Reader)',
 'apple\-pubsub','Apple OSX newsreader',
+'simplepie', '<a href="http://simplepie.org" target="_blank">SimplePie</a>',
 
 'facebookexternalhit','<a href="http://www.facebook.com/externalhit_uatext.php" target="_blank">FaceBook external hit</a>',
 'browsershots','<a href="http://browsershots.org/" target="_blank">Browsershots</a>',
@@ -568,6 +570,7 @@
 'google-site-verification','1',
 'clamav','1',
 'validator\.nu',1,
+'simplepie',1,
 #mod - end
 );
 
