@@ -339,6 +339,10 @@
 'bjaaland',
 'contentmatch',
 'ferret',
+#mod - start
+'googlebot-mobile',
+'googlebot-image',
+#mod - end
 'googlebot',
 'google\-sitemaps',
 'gulliver',
@@ -380,6 +384,16 @@
 'wisenutbot'
 );
 @RobotsSearchIDOrder_list2 = (
+#mod - start
+'twitturly',
+'winhttp',
+'labs.topsy.com\/butterfly\.html',
+'metadata_scraper',
+'js-kit\.com',
+'postrank\.com',
+'twingly_recon',
+'panscient\.com',
+#mod - end
 # Less common robots (In robot file)
 '[^a]fish',
 'abcdatos',
@@ -620,6 +634,7 @@
 'w3m2',
 'wallpaper',
 'wanderer',
+'wapspIRLider',
 'webbandit',
 'webcatcher',
 'webcopy',
@@ -672,6 +687,7 @@
 'bender',
 'betabot',
 'biglotron',
+'bitlybot',
 'bittorrent_bot',
 'biz360[_+ ]spider',
 'blogbridge[_+ ]service',
@@ -682,6 +698,9 @@
 'blogslive',
 'blogssay',
 'bncf\.firenze\.sbn\.it\/raccolta\.txt',
+#mod - start?
+'bpimagewalker',
+#mod - end
 'bobby',
 'boitho\.com\-dc',
 'bookmark\-manager',
@@ -708,6 +727,7 @@
 'deepindex',
 'dipsie\.bot',
 'dnsgroup',
+'docomo',
 'domainchecker',
 'domainsdb\.net',
 'dulance',
@@ -725,6 +745,7 @@
 'ezresult',
 'enteprise',
 'facebook',
+'fast_enterprise_crawler.*crawleradmin\.t\-info@telekom\.de',
 'fast_enterprise_crawler.*t\-info_bi_cluster_crawleradmin\.t\-info@telekom\.de',
 'matrix_s\.p\.a\._\-_fast_enterprise_crawler', # must come before fast enterprise crawler
 'fast_enterprise_crawler',
@@ -816,6 +837,7 @@
 'miva',
 'mizzu_labs',
 'mj12bot',
+'mlbot',
 'mojeekbot',
 'msiecrawler',
 'ms_search_4\.0_robot',
@@ -1060,6 +1082,7 @@
 'blindekuh','Die Blinde Kuh',
 'bloodhound','Bloodhound',
 'borg\-bot','Borg-Bot',
+'bpimagewalker','<a href="http://www.bdbrandprotect.com/" target="_blank">BPImageWalker</a>',
 'brightnet','bright.net caching robot',
 'bspider','BSpider',
 'cactvschemistryspider','CACTVS Chemistry Spider',
@@ -1331,6 +1354,7 @@
 'bender','<a href="http://bender.ucr.edu/" title="Bot home page [new window]" target="_blank">bender</a> <a href="http://ivia.ucr.edu/manuals/NiFC/current/index.shtml" title="Bot home page [new window]" target="_blank">focused_crawler</a>',
 'betabot','BetaBot',
 'biglotron','<a href="http://www.biglotron.com/robot.html" title="Bot home page [new window]" target="_blank">Biglotron</a>',
+'bitlybot','<a href="http://bit.ly" target="_blank">bit.ly bot</a>',
 'bittorrent_bot','<a href="http://www.bittorrent.com/" title="Bot home page [new window]" target="_blank">BitTorrent Bot</a>',
 'biz360[_+ ]spider','<a href="http://www.biz360.com/" title="blogsmanager@biz360.com Bot home page [new window]" target="_blank">Biz360 spider</a>',
 'blogbridge[_+ ]service','<a href="http://www.blogbridge.com/" title="Bot home page [new window]" target="_blank">BlogBridge Service</a>',
@@ -1366,6 +1390,7 @@
 'deepindex','<a href="http://www.deepindex.net/faq.php" title="Deepindex home page [new window]" target="_blank">Deepindex</a>',
 'dipsie\.bot','<a href="http://www.dipsie.com/bot/" title="Bot home page [new window]" target="_blank">Dipsie</a>',
 'dnsgroup','<a href="http://www.dnsgroup.com/" title="DNSGroup home page [new window]" target="_blank">DNSGroup</a>',
+'docomo','<a href="http://www.nttdocomo.co.jp/" title="DoCoMo home page [new window]" target="_blank">DoCoMo</a>',
 'domainchecker','<a href="http://net-promoter.com/" title="DomainChecker home page (not confirmed) [new window]" target="_blank">DomainChecker</a>',
 'domainsdb\.net','<a href="http://domainsdb.net/" title="Bot home page [new window]" target="_blank">DomainsDB.net</a>',
 'dulance','<a href="http://www.dulance.com/bot.jsp" title="Bot home page [new window]" target="_blank">Dulance</a>',
@@ -1471,6 +1496,7 @@
 'misterbot','<a href="http://www.misterbot.fr/" title="Misterbot home page [new window]" target="_blank">Misterbot</a>',
 'miva','<a href="http://www.miva.com/" title="Miva home page [new window]" target="_blank">Miva</a>',
 'mizzu_labs','<a href="http://www.psychedelix.com/cgi-bin/csv2html.pl?data=allagents.csv&amp;template=detail.html&amp;match=\bid_m_141105_2\b " title="Mizzu Labs home page [new window]" target="_blank">Mizzu Labs</a>',
+'mlbot','<a href="http://www.metadatalabs.com/mlbot" target="_blank">MLBot</a>',
 'mj12bot','<a href="http://majestic12.co.uk/bot.php" title="Bot home page. [new window]" target="_blank">MJ12bot</a>',
 'mojeekbot','<a href="http://www.mojeek.com/bot.html" title="Bot home page. [new window]" target="_blank">MojeekBot</a>',
 'msiecrawler','<a href="http://msdn.microsoft.com/workshop/delivery/offline/linkrel.asp" title="Bot home page. [new window]" target="_blank">MSIECrawler</a>',
@@ -1638,7 +1664,19 @@
 '[\s_+:,\.\;\/\\\-]bot','Unknown robot (identified by \'*bot\')',
 'no_user_agent','Unknown robot (identified by empty user agent string)',
 # Unknown robots identified by hit on robots.txt
-'unknown', 'Unknown robot (identified by hit on \'robots.txt\')'
+'unknown', 'Unknown robot (identified by hit on \'robots.txt\')',
+#mod - start
+'googlebot-image','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot Images</a>',
+'googlebot-mobile','<a href="http://www.google.com/bot.html" title="Bot home page [new window]" target="_blank">Googlebot Mobile</a>',
+'twitturly','<a href="http://twitturly.com/about/" target="_blank">Twitturly twitter link tracker</a>',
+'winhttp','Unknown, suspected bot',
+'labs.topsy.com\/butterfly\.html','Butterfly bot',
+'metadata_scraper','<a href="http://wiki.creativecommons.org/Metadata_Scraper">Creative Commons Metadata Scraper</a>',
+'js-kit\.com','<a href="http://aboutecho.com/">JS-kit.com</a>',
+'postrank\.com','<a href="http://www.postrank.com/">Postrank</a>',
+'twingly_recon','<a href="http://www.twingly.com/">Twingly</a>',
+'panscient\.com','<a href="http://panscient.com/">Pansciennt</a>',
+#mod - end
 );
 
 
@@ -1647,6 +1685,10 @@
 #-------------------------------------------------------------
 %RobotsAffiliateLib = (
 'fast\-webcrawler'=>'AllTheWeb',
+#mod - start
+'googlebot-mobile'=>'Google',
+'googlebot-image'=>'Google',
+#mod - end
 'googlebot'=>'Google',
 'google\-sitemap'=>'Google',
 'msnbot'=>'MSN',
