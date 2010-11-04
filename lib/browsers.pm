@@ -56,6 +56,7 @@
 'evolution',
 'eudora',
 'clamav',
+'disqus',
 #mod - end
 
 # Other standard web browsers
@@ -534,6 +535,7 @@
 'facebookexternalhit','<a href="http://www.facebook.com/externalhit_uatext.php" target="_blank">FaceBook external hit</a>',
 'browsershots','<a href="http://browsershots.org/" target="_blank">Browsershots</a>',
 'plesk','Plesk control panel',
+'disqus','<a href="http://disqus.com/" target="_blank">Disqus</a>',
 
 'validator\.nu','HTML5 validator',
 
@@ -569,8 +571,9 @@
 'plesk','1',
 'google-site-verification','1',
 'clamav','1',
-'validator\.nu',1,
-'simplepie',1,
+'validator\.nu','1',
+'simplepie','1',
+'disqus','1',
 #mod - end
 );
 
