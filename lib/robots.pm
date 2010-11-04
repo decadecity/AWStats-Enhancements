@@ -392,6 +392,7 @@
 'js-kit\.com',
 'postrank\.com',
 'twingly_recon',
+'panscient\.com',
 #mod - end
 # Less common robots (In robot file)
 '[^a]fish',
@@ -1668,6 +1669,7 @@
 'js-kit\.com','<a href="http://aboutecho.com/">JS-kit.com</a>',
 'postrank\.com','<a href="http://www.postrank.com/">Postrank</a>',
 'twingly_recon','<a href="http://www.twingly.com/">Twingly</a>',
+'panscient\.com','<a href="http://panscient.com/">Pansciennt</a>',
 #mod - end
 );
 

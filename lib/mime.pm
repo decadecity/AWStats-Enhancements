@@ -18,6 +18,7 @@
 'img',       'Asset Image',
 'grav',      'Gravatar Image',
 'rdf',       'Resource Description File',
+'eot',       'Embedded OpenType font file',
 #mod - end
 'text',      'Text file',
 'page',      'HTML or XML static page',
@@ -61,6 +62,7 @@
 'grav','gravatar',
 'ajax','ajax',
 'rdf','rdf',
+'eot','eot',
 #mod - end
 
 # Text file
@@ -178,6 +180,7 @@
 'grav','grav',
 'ajax','ajax',
 'rdf','rdf',
+'eot','eot',
 #mod - end
 
 # Text file
