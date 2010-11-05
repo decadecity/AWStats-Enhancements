@@ -229,7 +229,7 @@
 #-----------------------------------------------------------
 %OSHashLib      = (
 #mod - start
-'android','<a href="http://code.google.com/android/" title="Google Android home page [new window]" target="_blank">Google Android</a>',
+'android','Google Android',
 'iphone','iPhone',
 'apple\-pubsub','OSX news reader',
 'nintendo[_+ ]dsi','Nintendo DSi',

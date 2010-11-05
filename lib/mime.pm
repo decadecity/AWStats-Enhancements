@@ -9,13 +9,19 @@
 #package AWSMIME;
 
 # MimeHashFamily
-# This is a hash table of mime groupings and descriptions. 
+# This is a hash table of mime groupings and descriptions.
 # Report icons will appear if names the same as a family, e.g.
 # if you have a "text.png" icon in the icon/mime directory, the
 # report will load the icon
 # Format: 	'family', 'descriptive text',
 #---------------------------------------------------------------
 %MimeHashFamily = (
+#mod - start
+'ajax',      'AJAX request',
+'grav',      'Gravatar Image',
+'rdf',       'Resource Description File',
+'eot',       'Embedded OpenType font file',
+#mod - end
 'text',      'Text file',
 'page',      'HTML or XML static page',
 'script',    'Dynamic Html page or Script file',
@@ -83,7 +89,7 @@
 # HTML Dynamic pages or script
 'asp',['script',''],
 'aspx',['dotnet',''],
-'ashx',['dotnet',''], 
+'ashx',['dotnet',''],
 'asmx',['dotnet',''],
 'axd', ['dotnet',''],
 'cfm',['script',''],
@@ -199,6 +205,14 @@
 # Encrypted files
 'pgp',['encrypt',''],
 'gpg',['encrypt',''],
+#mod - start
+'ajax',['ajax',''],
+'img',['image','i'],
+'grav',['grav','i'],
+'rdf',['rdf','d'],
+'eot',['eot',''],
+'atom',['rss',''],
+#mod - end
 );
 
 
