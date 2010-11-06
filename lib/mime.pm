@@ -21,6 +21,7 @@
 'grav',      'Gravatar Image',
 'rdf',       'Resource Description File',
 'eot',       'Embedded OpenType font file',
+'json',      'JSON data',
 #mod - end
 'text',      'Text file',
 'page',      'HTML or XML static page',
@@ -114,7 +115,7 @@
 'png',['image','i'],
 'bmp',['image','i'],
 'jpg',['image','i'],
-'jpeg',['image','i'],
+'jpeg',['image','p'],
 'cdr',['image','d'],
 'ico',['image','i'],
 'svg',['image','i'],
@@ -209,9 +210,10 @@
 'ajax',['ajax',''],
 'img',['image','i'],
 'grav',['grav','i'],
-'rdf',['rdf','d'],
+'rdf',['rdf',''],
 'eot',['eot',''],
 'atom',['rss',''],
+'json',['json',''],
 #mod - end
 );
 
