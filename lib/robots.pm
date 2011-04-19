@@ -393,6 +393,13 @@
 'postrank\.com',
 'twingly_recon',
 'panscient\.com',
+'feedzirra',
+'tweethitapp',
+'unwindfetchor',
+'twitterfeed',
+'urlresolver',
+'statusnet',
+'summify',
 #mod - end
 # Less common robots (In robot file)
 '[^a]fish',
@@ -1676,6 +1683,13 @@
 'postrank\.com','<a href="http://www.postrank.com/">Postrank</a>',
 'twingly_recon','<a href="http://www.twingly.com/">Twingly</a>',
 'panscient\.com','<a href="http://panscient.com/">Pansciennt</a>',
+'feedzirra', '<a href="http://github.com/pauldix/feedzirra/tree/master">Feedzirra</a>',
+'tweethitapp', 'Tweet Hit App',
+'unwindfetchor', '<a href="http://www.gnip.com/">UnwindFetchor</a>',
+'twitterfeed', '<a href="http://twitterfeed.com/">Twitter Feed</a>',
+'urlresolver', 'URL Resolver',
+'statusnet', 'Status Net',
+'summify', '<a href="http://summify.com">Summify</a>',
 #mod - end
 );
 

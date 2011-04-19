@@ -20,7 +20,7 @@
 'ajax',      'AJAX request',
 'grav',      'Gravatar Image',
 'rdf',       'Resource Description File',
-'eot',       'Embedded OpenType font file',
+'font',       'Embedded OpenType font file',
 'json',      'JSON data',
 #mod - end
 'text',      'Text file',
@@ -50,7 +50,9 @@
 'svg',       'Scalable Vector Graphics',
 'ai',        'Adobe Illustrator file',
 'phshop',    'Adobe Photoshop image file',
-'ttf',       'TrueType scalable font file',
+#mod - start
+'font',       'TrueType scalable font file',
+#mod - end
 'fon',       'Font file',
 'pdf',       'Adobe Acrobat file',
 'dotnet',	 'Dot Net Dynamic Script or File',
@@ -214,6 +216,7 @@
 'eot',['eot',''],
 'atom',['rss',''],
 'json',['json',''],
+'xpi',['package','d'],
 #mod - end
 );
 
