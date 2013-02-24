@@ -13630,9 +13630,6 @@ sub HTMLMainDaily{
 				: ""
 			  )
 			  . ">";
-#mod - start
-      print "<a href='./awstats.pl\?framename=mainright&amp;databasebreak=day&amp;config=" . $SiteConfig . "&amp;day=" . $day . "&amp;month=" . $month . "&amp;year=" . $year . "'>";
-#mod - end;
 			print(
 				!$StaticLinks
 				  && $day == $nowday
@@ -13706,8 +13703,10 @@ sub HTMLMainDaily{
 				: ""
 			  )
 			  . ">";
-			print "<td>"
-			  . (
+#mod - start
+			print "<td>";
+      print "<a href='./awstats.pl\?framename=mainright&amp;databasebreak=day&amp;config=" . $SiteConfig . "&amp;day=" . $day . "&amp;month=" . $month . "&amp;year=" . $year . "'>";
+			 print  (
 				!$StaticLinks
 				  && $day == $nowday
 				  && $month == $nowmonth
@@ -13715,11 +13714,15 @@ sub HTMLMainDaily{
 				? '<span class="currentday">'
 				: ''
 			  );
+#mod - end;
 			print Format_Date( "$year$month$day" . "000000", 2 );
 			print(   !$StaticLinks
 				  && $day == $nowday
 				  && $month == $nowmonth
 				  && $year == $nowyear ? '</span>' : '' );
+#mod - start
+      print "</a>";
+#mod - end
 			print "</td>";
 			if ( $ShowDaysOfMonthStats =~ /V/i ) {
 				print "<td>",
