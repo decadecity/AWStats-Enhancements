@@ -3,9 +3,9 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.66 $ - $Author: manolamancha $ - $Date: 2010/05/17 12:35:58 $
+# $Revision: 1.68 $ - $Author: eldy $ - $Date: 2012/12/05 13:14:22 $
 
-# 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
+# 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html
 # 				akregator (rss)
 #				AppleSyndication  (rss)
 #				BlogBridge http://www.blogbridge.com/ (rss)
@@ -21,7 +21,7 @@
 #				Potu Rss-Reader http://www.potu.com/
 #				OSSProxy http://www.marketscore.com/FAQ.Aspx
 
-		
+
 #package AWSUA;
 
 # Relocated from main file for easier editing
@@ -143,6 +143,8 @@
 'webvcr',
 'qnx\svoyager',
 # Site grabbers
+'cloudflare',
+'grabber',
 'teleport',
 'webcapture',
 'webcopier',
@@ -191,33 +193,33 @@
 'betanews_reader',
 'blogbridge',
 'cyndicate',
-'feeddemon', 
-'feedreader', 
+'feeddemon',
+'feedreader',
 'feedtools',
 'greatnews',
 'gregarius',
-'hatena_rss', 
-'jetbrains_omea', 
+'hatena_rss',
+'jetbrains_omea',
 'liferea',
-'netnewswire', 
-'newsfire', 
-'newsgator', 
+'netnewswire',
+'newsfire',
+'newsgator',
 'newzcrawler',
 'plagger',
-'pluck', 
+'pluck',
 'potu',
 'pubsub\-rss\-reader',
-'pulpfiction', 
-'rssbandit', 
+'pulpfiction',
+'rssbandit',
 'rssreader',
-'rssowl', 
+'rssowl',
 'rss\sxpress',
 'rssxpress',
-'sage', 
-'sharpreader', 
-'shrook', 
-'straw', 
-'syndirella', 
+'sage',
+'sharpreader',
+'shrook',
+'straw',
+'syndirella',
 'vienna',
 'wizz\srss\snews\sreader',
 # PDA/Phonecell browsers
@@ -278,20 +280,22 @@
 'webreaper',
 'webzip',
 'staroffice',
-'gnus', 
-'nikto', 
+'gnus',
+'nikto',
 'download\smaster',
-'microsoft\-webdav\-miniredir', 
+'microsoft\-webdav\-miniredir',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\scache\smanager',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sdav',
 'POE\-Component\-Client\-HTTP',
 'mozilla',				# Must be at end because a lot of browsers contains mozilla in string
 'libwww',				# Must be at end because some browser have both 'browser id' and 'libwww'
 'lwp',
+
 #mod - start
 'java',
 'php',
 #mod - end
+
 );
 
 # BrowsersHashIDLib
@@ -305,7 +309,7 @@
 'chrome','Google Chrome',
 'safari','Safari',
 'konqueror','Konqueror',
-'svn', 'Subversion client', 
+'svn', 'Subversion client',
 'msie','MS Internet Explorer',
 'netscape','Netscape',
 
@@ -389,6 +393,8 @@
 'webvcr','WebVCR',
 'qnx\svoyager','QNX Voyager',
 # Site grabbers
+'cloudflare','CloudFlare',
+'grabber','Grabber',
 'teleport','TelePort Pro',
 'webcapture','Acrobat Webcapture',
 'webcopier', 'WebCopier',
@@ -416,7 +422,7 @@
 'abilon','Abilon (RSS Reader)',
 'aggrevator', 'Aggrevator (RSS Reader)',
 'aiderss', 'AideRSS (RSS Reader)',
-'akregator','<a href="http://akregator.sourceforge.net/" title="Browser home page [new window]" target="_blank">Akregator (RSS Reader)</a>',  
+'akregator','<a href="http://akregator.sourceforge.net/" title="Browser home page [new window]" target="_blank">Akregator (RSS Reader)</a>',
 'applesyndication','<a href="http://www.apple.com/macosx/features/safari/" title="Browser home page [new window]" target="_blank">AppleSyndication (RSS Reader)</a>',
 'betanews_reader','Betanews Reader (RSS Reader)',
 'blogbridge','<a href="http://www.blogbridge.com/" title="Browser home page [new window]" target="_blank">BlogBridge (RSS Reader)</a>',
@@ -490,8 +496,8 @@
 'adobeair','AdobeAir',
 'apt','Debian APT',
 'analogx_proxy','AnalogX Proxy',
-'gnome\-vfs', 'Gnome FileSystem Abstraction library', 
-'neon', 'Neon HTTP and WebDAV client library', 
+'gnome\-vfs', 'Gnome FileSystem Abstraction library',
+'neon', 'Neon HTTP and WebDAV client library',
 'curl','Curl',
 'csscheck','WDG CSS Validator',
 'httrack','HTTrack',
@@ -509,7 +515,7 @@
 'webzip','WebZIP',
 'staroffice','StarOffice',
 'gnus', 'Gnus Network User Services',
-'nikto', 'Nikto Web Scanner', 
+'nikto', 'Nikto Web Scanner',
 'download\smaster','Download Master',
 'microsoft\-webdav\-miniredir', 'Microsoft Data Access Component Internet Publishing Provider',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\scache\smanager', 'Microsoft Data Access Component Internet Publishing Provider Cache Manager',
@@ -519,7 +525,7 @@
 'libwww','LibWWW',
 'lwp','LibWWW-perl',
 
-#these go at the end to overrride anything set above
+# These go at the end to override anything set above.
 
 #mod - start
 'ipod','iPod',
@@ -558,6 +564,7 @@
 'php','PHP',
 'java','Java',
 #mod-end
+
 );
 
 
@@ -566,6 +573,8 @@
 # browsers.
 #---------------------------------------------------------------------------
 %BrowsersHereAreGrabbers = (
+'cloudflare','1',
+'grabber','1',
 'teleport','1',
 'webcapture','1',
 'webcopier','1',
@@ -578,6 +587,7 @@
 'download\smaster','1',
 'webdownloader\sfor\sx','1',
 'webzip','1',
+
 #mod - start
 'facebookexternalhit','1',
 'browsershots','1',
@@ -590,6 +600,7 @@
 'simplepie','1',
 'disqus','1',
 #mod - end
+
 );
 
 
@@ -602,7 +613,7 @@
 # firefox, opera, chrome, safari, konqueror, svn, msie, netscape
 'firefox','firefox',
 'opera','opera',
-'chrome','chrome', 
+'chrome','chrome',
 'safari','safari',
 'konqueror','konqueror',
 'svn','subversion',
@@ -661,6 +672,7 @@
 'netpositive','netpositive',
 'phoenix','phoenix',
 # Site grabbers
+'grabber','grabber',
 'teleport','teleport',
 'webcapture','adobe',
 'webcopier','webcopier',
@@ -760,8 +772,8 @@
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sprotocol\sdiscovery','frontpage',
 'microsoft\soffice\sprotocol\sdiscovery','frontpage',
 'microsoft\soffice\sexistence\sdiscovery','frontpage',
-'gnome\-vfs', 'gnome', 
-'neon','neon', 
+'gnome\-vfs', 'gnome',
+'neon','neon',
 'javaws','java',
 'webzip','webzip',
 'webreaper','webreaper',
@@ -770,7 +782,7 @@
 'gnus', 'gnus',
 'mozilla','mozilla',
 
-#these go at the end to override
+# These go at the end to override.
 
 #mod - start
 'ipod','iphone',
@@ -799,7 +811,7 @@
 );
 
 # Source for this is http://developer.apple.com/internet/safari/uamatrix.html
-%BrowsersSafariBuildToVersionHash = 
+%BrowsersSafariBuildToVersionHash =
 (
     '48' 		=> '0.8',
     '51' 		=> '0.8.1',
@@ -866,7 +878,7 @@
 # Netscape	4.05	Mozilla/4.05 [fr]C-SYMPA (Win95; I)
 # Netscape	4.7     Mozilla/4.7 [fr] (Win95; I)
 # Netscape	6.0		Mozilla/5.0 (Macintosh; N; PPC; fr-FR; m18) Gecko/20001108 Netscape6/6.0
-# Netscape	7.02	Mozilla/5.0 (Platform; Security; OS-or-CPU; Localization; rv:1.0.2) Gecko/20030208 Netscape/7.02 
+# Netscape	7.02	Mozilla/5.0 (Platform; Security; OS-or-CPU; Localization; rv:1.0.2) Gecko/20030208 Netscape/7.02
 #
 # -- Gecko others --
 # Mozilla	1.3		Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.3) Gecko/20030312

@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2009/10/25 11:20:49 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2012/10/17 09:35:19 $
 
 # Originale version by malu
 # 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
@@ -25,6 +25,17 @@
 		
 #package AWSUA;
 
+# Relocated from main file for easier editing
+%BrowsersFamily = (
+    'msie'      => 1,
+    'firefox'   => 2,
+    'netscape'  => 3,
+    'svn'       => 4,
+    'opera'     => 5,
+    'safari'    => 6,
+    'chrome'    => 7,
+    'konqueror' => 8
+);
 
 # BrowsersSearchIDOrder
 # This list is used to know in which order to search Browsers IDs (Most
