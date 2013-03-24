@@ -404,6 +404,17 @@
 'summify',
 'metauri',
 'windows-rss-platform',
+'explore_6\.0',
+'ie_5\.5_compatible_browser',
+'zend_http_client',
+'appengine-google',
+'email_exractor',
+'httpcomponents',
+'linkdex\.com',
+'tuneupapp',
+'binlar',
+'bitlybot',
+'aNag',
 #mod - end
 # Less common robots (In robot file)
 '[^a]fish',
@@ -1913,6 +1924,17 @@
 'wapspIRLider', 'wapspIRLider',
 'bpimagewalker', 'bpimagewalker',
 'fast_enterprise_crawler.*crawleradmin\.t\-info@telekom\.de', 'FastCrawler',
+'explore_6\.0', 'Explore 6.0',
+'ie_5\.5_compatible_browser', 'IE 5.5 compatible browser',
+'zend_http_client', 'Zend framework',
+'appengine-google', 'Google App Engine',
+'email_exractor', 'Email Exractor ??',
+'httpcomponents', 'HTTP Components',
+'linkdex\.com', 'linkdex.com',
+'tuneupapp', 'TuneUpApp for Mac',
+'binlar', 'binlar',
+'bitlybot', 'Bit.ly Bot',
+'aNag', 'Android Nagios Client',
 '', '', #?????
 #mod - end
 );

@@ -68,6 +68,8 @@
 'eudora',
 'clamav',
 'disqus',
+'advanced_browser',
+'readability',
 #mod - end
 
 # Other standard web browsers
@@ -177,6 +179,11 @@
 'xine',
 'xmms',
 'gstreamer',
+
+#mod - start
+'vlc',
+#mod - end
+
 # RSS Readers
 
 #mod- start
@@ -537,6 +544,8 @@
 'moozilla','<a href="http://www.moo.ca/moozilla" target="_blank">Moozilla</a>',
 'evolution','Evolution mail',
 'eudora','Eudora mail',
+'advanced_browser', '<a href="http://www.avantbrowser.com">Advanced Browser</a>',
+'readability', 'Readability',
 
 'google_wireless_transcoder','<a href="http://google.com/gwt/n" target="_blank">Google Wireless Transcoder for mobiles</a>',
 'google-site-verification','Google site verification',
@@ -547,6 +556,8 @@
 
 'ipx','IPX',
 'worldpay','WorldPay',
+
+'vlc', 'VLC',
 
 'newsrob', 'NewsRob (RSS Reader)',
 'apple\-pubsub','Apple OSX newsreader',
@@ -563,6 +574,7 @@
 
 'php','PHP',
 'java','Java',
+
 #mod-end
 
 );
@@ -806,7 +818,9 @@
 'outlook-express','outlook-express',
 'evolution','evolution',
 'eudora', 'eudora',
-'clamav', 'clamscan'
+'clamav', 'clamscan',
+'vlc', 'vlc',
+'readability', 'readability',
 #mod - end
 );
 
