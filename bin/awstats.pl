@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #------------------------------------------------------------------------------
-# $Revision: 1.983 $ - $Author: eldy $ - $Date: 2012/12/19 17:30:47 $
+# $Revision: 1.989 $ - $Author: eldy $ - $Date: 2013/03/08 20:16:52 $
 require 5.007;
 
 #$|=1;
@@ -35,7 +35,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.983 $';
+$REVISION = '$Revision: 1.989 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.1 (build $REVISION)";
@@ -98,7 +98,7 @@ $LastUpdate          = 0;
 $lowerval            = 0;
 $PluginMode          = '';
 $MetaRobot           = 0;
-$AverageVisits = $AveragePages = $AverageHits = $AverageBytes = 0;
+$AverageVisits = $AveragePages = $AverageHits = $AverageBytes = 0; 
 $TotalUnique         = $TotalVisits = $TotalHostsKnown = $TotalHostsUnknown = 0;
 $TotalPages          = $TotalHits = $TotalBytes = $TotalHitsErrors = 0;
 $TotalNotViewedPages = $TotalNotViewedHits = $TotalNotViewedBytes = 0;
@@ -916,9 +916,9 @@ sub html_head {
 				print <<EOF;
 .aws_data {
 	background-color: #$color_Background;
-	border-top-width: 1px;
-	border-left-width: 0px;
-	border-right-width: 0px;
+	border-top-width: 1px;   
+	border-left-width: 0px;  
+	border-right-width: 0px; 
 	border-bottom-width: 0px;
 }
 .aws_formfield { font: 13px verdana, arial, helvetica; }
@@ -963,7 +963,7 @@ EOF
 			my $function = "AddHTMLHeader_$pluginname";
 			&$function();
 		}
-
+			
 		print "</head>\n\n";
 		if ( $FrameName ne 'index' ) {
 			print "<body style=\"margin-top: 0px\"";
@@ -1188,12 +1188,12 @@ sub error {
 			if ( $LogFormat == 4 ) {
 				print
 "${tagbold}\"common log format\"${tagunbold} like this:${tagbr}\n";
-				print( scalar keys %HTMLOutput ? "$tagfontgrey<i>" : "" );
+				print( scalar keys %HTMLOutput ? "$tagfontgrey<i><pre>" : "" );
 				print
 "111.22.33.44 - - [10/Jan/2001:02:14:14 +0200] \"GET / HTTP/1.1\" 200 1234\n";
 				print(
 					scalar keys %HTMLOutput
-					? "</i>$tagunfont${tagbr}${tagbr}\n"
+					? "</pre></i>$tagunfont${tagbr}${tagbr}\n"
 					: ""
 				);
 			}
@@ -1617,7 +1617,7 @@ sub Get_Extension{
 	}
 	else {
 		$extension = 'Unknown';
-	}
+	}	
 	return $extension;
 }
 
@@ -1634,7 +1634,7 @@ sub Get_Filename{
 	# check for slash
 	$idx = rindex($temp, "/");
 	if ($idx > -1){ $temp = substr($temp, $idx+1);}
-	else{
+	else{ 
 		$idx = rindex($temp, "\\");
 		if ($idx > -1){ $temp = substr($temp, $idx+1);}
 	}
@@ -1711,7 +1711,7 @@ sub Read_Config {
 			"/etc/awstats",
 			"/usr/local/etc/awstats", "/etc",
 			"/etc/opt/awstats"
-		);
+		); 
 
 	if ($configdir) {
 		# Check if configdir is outside default values.
@@ -1747,7 +1747,7 @@ sub Read_Config {
 			if ($Debug){debug("Opened config: $searchdir$PROG.$SiteConfig.conf", 2);}
 			last;
 		}else{if ($Debug){debug("Unable to open config file: $searchdir$PROG.conf", 2);}}
-		#CL - Added to open config if full path is passed to awstats
+		#CL - Added to open config if full path is passed to awstats 
 		if ( open( CONFIG, "$SiteConfig" ) ) {
 			$FileConfig = "$SiteConfig";
 			$FileSuffix = '';
@@ -1761,7 +1761,7 @@ sub Read_Config {
 "Couldn't open config file \"$PROG.$SiteConfig.conf\" nor \"$PROG.conf\" after searching in path \""
 			  . join( ', ', @PossibleConfigDir )
 			  . "\": $!" );
-		}else{error("Couldn't open config file \"$PROG.$SiteConfig.conf\" nor \"$PROG.conf\".
+		}else{error("Couldn't open config file \"$PROG.$SiteConfig.conf\" nor \"$PROG.conf\". 
 		Please read the documentation for directories where the configuration file should be located."); }
 	}
 
@@ -3465,9 +3465,9 @@ sub Read_History_With_TmpUpdate {
 		{
 			$SectionsToLoad{'filetypes'} = $order++;
 		}
-
-		if ( $UpdateStats
-		    || $MigrateStats
+		
+		if ( $UpdateStats 
+		    || $MigrateStats 
 		    || ($HTMLOutput{'main'} && $ShowDownloadsStats )
 		    || $HTMLOutput{'downloads'} )
 		{
@@ -5339,7 +5339,7 @@ sub Read_History_With_TmpUpdate {
 							$countloaded++;
 							$_downloads{$field[0]}->{'AWSTATS_HITS'} += int( $field[1] );
 							$_downloads{$field[0]}->{'AWSTATS_206'} += int( $field[2] );
-							$_downloads{$field[0]}->{'AWSTATS_SIZE'} += int( $field[3] );
+							$_downloads{$field[0]}->{'AWSTATS_SIZE'} += int( $field[3] );	
 						}
 					}
 					$_ = <HISTORY>;
@@ -7817,7 +7817,8 @@ sub DecodeEncodedString {
 # Return:		standardregex
 #------------------------------------------------------------------------------
 sub UnCompileRegex {
-	shift =~ /\(\?[-\w]*:(.*)\)/;
+	shift =~ /\(\?[-^\w]*:(.*)\)/;         # Works with all perl
+	# shift =~ /\(\?[-\w]*:(.*)\)/;        < perl 5.14
 	return $1;
 }
 
@@ -9075,6 +9076,16 @@ sub DefinePerlParsingFormat {
 				push @fieldlib, 'date';
 				$PerlParsingFormat .= "(\\d+)";
 			}
+			elsif ( $f =~ /%time5$/ ) {    # yyyy-mm-ddThh:mm:ss+00:00 (iso format)
+				$pos_date = $i;
+				$i++;
+				push @fieldlib, 'date';
+				$pos_tz = $i;
+				$i++;
+				push @fieldlib, 'tz';
+				$PerlParsingFormat .=
+"([^$LogSeparatorWithoutStar]+T[^$LogSeparatorWithoutStar]+)([-+]\d\d:\d\d)";
+			}
 
 			# Special for methodurl and methodurlnoprot
 			elsif ( $f =~ /%methodurl$/ ) {
@@ -9822,8 +9833,8 @@ sub HTMLTopBanner{
 			}
 			else {
 				print
- "<span style=\"color: #880000\">No qualified records found in log
- ($NbOfLinesCorrupted corrupted, $NbOfLinesComment comments, $NbOfLinesBlank Blank,
+ "<span style=\"color: #880000\">No qualified records found in log 
+ ($NbOfLinesCorrupted corrupted, $NbOfLinesComment comments, $NbOfLinesBlank Blank, 
  $NbOfLinesDropped dropped)</span>";
 			}
 		}
@@ -10447,22 +10458,22 @@ sub HTMLMainFileType{
 	foreach ( keys %_filetypes_k ) { $Totalk += $_filetypes_k{$_}; }
 	my $title = "$Message[73]";
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
-        # extend the title to include the added link
+        # extend the title to include the added link 
         $title = "$title &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
            "$AddLinkToExternalCGIWrapper" . "?section=FILETYPES&baseName=$DirData/$PROG"
            . "&month=$MonthRequired&year=$YearRequired&day=$DayRequired"
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
-    }
+    } 
 
 	if ( $ShowFileTypesStats =~ /C/i ) { $title .= " - $Message[98]"; }
-
+	
 	# build keylist at top
 	&BuildKeyList( $MaxRowsInHTMLOutput, 1, \%_filetypes_h,
 		\%_filetypes_h );
-
+		
 	&tab_head( "$title", 19, 0, 'filetypes' );
-
+		
 	# Graph the top five in a pie chart
 	if (scalar @keylist > 1){
 		foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
@@ -10480,7 +10491,7 @@ sub HTMLMainFileType{
 			print "<tr><td colspan=\"7\">";
 			my $function = "ShowGraph_$pluginname";
 			&$function(
-				"$title",              "filetypes",
+				"$Message[73]",              "filetypes",
 				0, 						\@blocklabel,
 				0,           			\@valcolor,
 				0,              		0,
@@ -10489,7 +10500,7 @@ sub HTMLMainFileType{
 			print "</td></tr>";
 		}
 	}
-
+	
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"3\">$Message[73]</th>";
 
@@ -10699,7 +10710,7 @@ sub HTMLShowBrowserDetail{
 			my $p_h = '&nbsp;';
 			my $p_p = '&nbsp;';
 			if ($total_h) {
-				$p_h =
+				$p_h = 
 				  int( $_browser_h{$key} / $total_h * 1000 ) / 10;
 				$p_h = "$p_h %";
 			}
@@ -10875,13 +10886,13 @@ sub HTMLShowBrowserUnknown{
 	print "$Center<a name=\"unknownbrowser\">&nbsp;</a><br />\n";
 	my $title = "$Message[50]";
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
-       # extend the title to include the added link
+       # extend the title to include the added link 
            $title = "$title &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
                "$AddLinkToExternalCGIWrapper" . "?section=UNKNOWNREFERERBROWSER&baseName=$DirData/$PROG"
            . "&month=$MonthRequired&year=$YearRequired&day=$DayRequired"
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
-    }
+    } 
 	&tab_head( "$title", 19, 0, 'unknownbrowser' );
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\"><th>User agent ("
 	  . ( scalar keys %_unknownrefererbrowser_l )
@@ -11149,13 +11160,13 @@ sub HTMLShowOSUnknown{
 	print "$Center<a name=\"unknownos\">&nbsp;</a><br />\n";
 	my $title = "$Message[46]";
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
-       # extend the title to include the added link
+       # extend the title to include the added link 
            $title = "$title &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
                "$AddLinkToExternalCGIWrapper" . "?section=UNKNOWNREFERER&baseName=$DirData/$PROG"
            . "&month=$MonthRequired&year=$YearRequired&day=$DayRequired"
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
-    }
+    } 
     &tab_head( "$title", 19, 0, 'unknownos' );
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\"><th>User agent ("
 	  . ( scalar keys %_unknownreferer_l )
@@ -11196,13 +11207,13 @@ sub HTMLShowReferers{
 	print "$Center<a name=\"refererse\">&nbsp;</a><br />\n";
 	my $title = "$Message[40]";
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
-       # extend the title to include the added link
+       # extend the title to include the added link 
            $title = "$title &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
                "$AddLinkToExternalCGIWrapper" . "?section=SEREFERRALS&baseName=$DirData/$PROG"
            . "&month=$MonthRequired&year=$YearRequired&day=$DayRequired"
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
-    }
+    } 
     &tab_head( $title, 19, 0, 'refererse' );
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th>".Format_Number($TotalDifferentSearchEngines)." $Message[122]</th>";
@@ -11309,7 +11320,7 @@ sub HTMLShowRefererPages{
 	);
 	my $title = "$Message[41]";
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
-       # extend the title to include the added link
+       # extend the title to include the added link 
            $title = "$title &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
                "$AddLinkToExternalCGIWrapper" . "?section=PAGEREFS&baseName=$DirData/$PROG"
            . "&month=$MonthRequired&year=$YearRequired&day=$DayRequired"
@@ -11436,13 +11447,13 @@ sub HTMLShowKeyPhrases{
 	print "$Center<a name=\"keyphrases\">&nbsp;</a><br />\n";
     my $title = "$Message[43]";
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
-       # extend the title to include the added link
+       # extend the title to include the added link 
            $title = "$title &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
                "$AddLinkToExternalCGIWrapper" . "?section=SEARCHWORDS&baseName=$DirData/$PROG"
            . "&month=$MonthRequired&year=$YearRequired&day=$DayRequired"
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
-    }
+    } 
 	&tab_head( $title, 19, 0, 'keyphrases' );
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\""
 	  . Tooltip(15)
@@ -11504,13 +11515,13 @@ sub HTMLShowKeywords{
 	print "$Center<a name=\"keywords\">&nbsp;</a><br />\n";
 	my $title = "$Message[44]";
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
-       # extend the title to include the added link
+       # extend the title to include the added link 
            $title = "$title &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
                "$AddLinkToExternalCGIWrapper" . "?section=KEYWORDS&baseName=$DirData/$PROG"
            . "&month=$MonthRequired&year=$YearRequired&day=$DayRequired"
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
-    }
+    } 
 	&tab_head( $title, 19, 0, 'keywords' );
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\""
 	  . Tooltip(15)
@@ -11616,7 +11627,7 @@ sub HTMLShowExtraSections{
 		my $total_p = 0;
 		my $total_h = 0;
 		my $total_k = 0;
-
+		
 		if ( $HTMLOutput{"allextra$extranum"} ) {
 			if ($Debug) { debug( "ExtraName$extranum", 2 ); }
 			print "$Center<a name=\"extra$extranum\">&nbsp;</a><br />";
@@ -11783,7 +11794,7 @@ sub HTMLShowRobots{
 	my $rest_h = 0;
 	my $rest_k = 0;
 	my $rest_r = 0;
-
+	
 	print "$Center<a name=\"robots\">&nbsp;</a><br />\n";
 	my $title = '';
 	if ( $HTMLOutput{'allrobots'} )  { $title .= "$Message[53]"; }
@@ -12751,7 +12762,7 @@ sub HTMLMainSummary{
 			}
 		}
 	}
-
+			
 	#print "$Center<a name=\"summary\">&nbsp;</a><br />\n";
 	my $title = "$Message[128]";
 	&tab_head( "$title", 0, 0, 'month' );
@@ -13085,7 +13096,7 @@ sub HTMLMainMonthly{
 			$valdata[ $xx++ ] = $MonthBytes{ $YearRequired . $monthix }
 			  || 0;
 		}
-
+		
 		my $function = "ShowGraph_$pluginname";
 		&$function(
 			"$title",        "month",
@@ -13359,7 +13370,7 @@ sub HTMLMainDaily{
 	my $lastdaytocountaverage = shift;
 	my $firstdaytoshowtime = shift;
 	my $lastdaytoshowtime = shift;
-
+	
 	if ($Debug) { debug( "ShowDaysOfMonthStats", 2 ); }
 	print "$Center<a name=\"daysofmonth\">&nbsp;</a><br />\n";
 
@@ -13394,7 +13405,7 @@ sub HTMLMainDaily{
 	print "<tr>";
 	print "<td align=\"center\">\n";
 	print "<center>\n";
-
+	
 	my $average_v = my $average_p = 0;
 	my $average_h = my $average_k = 0;
 	my $total_u = my $total_v = my $total_p = my $total_h = my $total_k = 0;
@@ -13803,8 +13814,8 @@ sub HTMLMainDaysofWeek{
 	my $firstdaytocountaverage = shift;
 	my $lastdaytocountaverage = shift;
     my $NewLinkParams = shift;
-    my $NewLinkTarget = shift;
-
+    my $NewLinkTarget = shift;	
+    
 	if ($Debug) { debug( "ShowDaysOfWeekStats", 2 ); }
 			print "$Center<a name=\"daysofweek\">&nbsp;</a><br />\n";
 			my $title = "$Message[91]";
@@ -13921,7 +13932,7 @@ sub HTMLMainDaysofWeek{
 				);
 				$graphdone=1;
 			}
-			if (! $graphdone)
+			if (! $graphdone) 
 			{
 				print "<table>\n";
 				print "<tr valign=\"bottom\">\n";
@@ -14128,7 +14139,7 @@ sub HTMLMainDownloads{
             . "&siteConfig=$SiteConfig" )
             . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+	  
 	&tab_head( "$title", 0, 0, 'downloads' );
 	my $cnt=0;
 	for my $u (sort {$_downloads{$b}->{'AWSTATS_HITS'} <=> $_downloads{$a}->{'AWSTATS_HITS'}}(keys %_downloads) ){
@@ -14165,14 +14176,14 @@ sub HTMLMainDownloads{
 			print "</td></tr>";
 		}
 	}
-
+	
 	my $total_dls = scalar keys %_downloads;
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[178]: $total_dls</th>";
 	if ( $ShowDownloadsStats =~ /H/i ){print "<th bgcolor=\"#$color_h\" width=\"80\">$Message[57]</th>"
 		."<th bgcolor=\"#$color_h\" width=\"80\">206 $Message[57]</th>"; }
 	if ( $ShowDownloadsStats =~ /B/i ){
 		print "<th bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th>";
-		print "<th bgcolor=\"#$color_k\" width=\"80\">$Message[106]</th>";
+		print "<th bgcolor=\"#$color_k\" width=\"80\">$Message[106]</th>"; 
 	}
 	print "</tr>\n";
 	my $count   = 0;
@@ -14224,20 +14235,20 @@ sub HTMLMainDownloads{
 sub HTMLMainHours{
     my $NewLinkParams = shift;
     my $NewLinkTarget = shift;
-
+        
     if ($Debug) { debug( "ShowHoursStats", 2 ); }
 	print "$Center<a name=\"hours\">&nbsp;</a><br />\n";
 	my $title = "$Message[20]";
-
+	
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
-       # extend the title to include the added link
+       # extend the title to include the added link 
            $title = "$title &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
                "$AddLinkToExternalCGIWrapper" . "?section=TIME&baseName=$DirData/$PROG"
            . "&month=$MonthRequired&year=$YearRequired&day=$DayRequired"
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
-    }
-
+    } 
+	
 	if ( $PluginsLoaded{'GetTimeZoneTitle'}{'timezone'} ) {
 		$title .= " (GMT "
 		  . ( GetTimeZoneTitle_timezone() >= 0 ? "+" : "" )
@@ -14283,7 +14294,7 @@ sub HTMLMainHours{
 		);
 		$graphdone=1;
 	}
-	if (! $graphdone)
+	if (! $graphdone) 
 	{
 		print "<table>\n";
 		print "<tr valign=\"bottom\">\n";
@@ -14458,7 +14469,7 @@ sub HTMLMainHours{
 sub HTMLMainCountries{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) { debug( "ShowDomainsStats", 2 ); }
 	print "$Center<a name=\"countries\">&nbsp;</a><br />\n";
 	my $title =
@@ -14470,7 +14481,7 @@ sub HTMLMainCountries{
 		: "$StaticLinks.alldomains.$StaticExt"
 	  )
 	  . "\"$NewLinkTarget>$Message[80]</a>";
-
+	  
 
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
        # extend the title to include the added link
@@ -14480,9 +14491,9 @@ sub HTMLMainCountries{
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+        	  
 	&tab_head( "$title", 19, 0, 'countries' );
-
+	
 	my $total_u = my $total_v = my $total_p = my $total_h = my $total_k = 0;
 	my $max_h = 1;
 	foreach ( values %_domener_h ) {
@@ -14493,12 +14504,12 @@ sub HTMLMainCountries{
 		if ( $_ > $max_k ) { $max_k = $_; }
 	}
 	my $count = 0;
-
+	
 	&BuildKeyList(
 		$MaxNbOf{'Domain'}, $MinHit{'Domain'},
 		\%_domener_h,       \%_domener_p
 	);
-
+	
 	# print the map
 	if (scalar @keylist > 1){
 		foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
@@ -14524,7 +14535,7 @@ sub HTMLMainCountries{
 			print "</td></tr>";
 		}
 	}
-
+	
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th width=\"$WIDTHCOLICON\">&nbsp;</th><th colspan=\"2\">$Message[17]</th>";
 
@@ -14558,7 +14569,7 @@ sub HTMLMainCountries{
 	}
 	print "<th>&nbsp;</th>";
 	print "</tr>\n";
-
+	
 	foreach my $key (@keylist) {
 		my ( $_domener_u, $_domener_v );
 		my $bredde_p = 0;
@@ -14699,7 +14710,7 @@ sub HTMLMainCountries{
 sub HTMLMainHosts{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) { debug( "ShowHostsStats", 2 ); }
 	print "$Center<a name=\"visitors\">&nbsp;</a><br />\n";
 	my $title =
@@ -14725,7 +14736,7 @@ sub HTMLMainHosts{
 		: "$StaticLinks.unknownip.$StaticExt"
 	  )
 	  . "\"$NewLinkTarget>$Message[45]</a>";
-
+	  
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
        # extend the title to include the added link
            $title = "$title &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
@@ -14734,12 +14745,12 @@ sub HTMLMainHosts{
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+	  
 	&tab_head( "$title", 19, 0, 'visitors' );
-
+	
 	&BuildKeyList( $MaxNbOf{'HostsShown'}, $MinHit{'Host'}, \%_host_h,
 		\%_host_p );
-
+		
 	# Graph the top five in a pie chart
 	if (scalar @keylist > 1){
 		foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
@@ -14766,7 +14777,7 @@ sub HTMLMainHosts{
 			print "</td></tr>";
 		}
 	}
-
+	
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\">";
 	print "<th>";
 	if ( $MonthRequired ne 'all' ) {
@@ -14798,7 +14809,7 @@ sub HTMLMainHosts{
 	print "</tr>\n";
 	my $total_p = my $total_h = my $total_k = 0;
 	my $count = 0;
-
+	
 	foreach my $key (@keylist) {
 		print "<tr>";
 		print "<td class=\"aws\">$key</td>";
@@ -14857,7 +14868,7 @@ sub HTMLMainHosts{
 sub HTMLMainLogins{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) { debug( "ShowAuthenticatedUsers", 2 ); }
 	print "$Center<a name=\"logins\">&nbsp;</a><br />\n";
 	my $title =
@@ -14994,7 +15005,7 @@ sub HTMLMainLogins{
 sub HTMLMainRobots{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) { debug( "ShowRobotStats", 2 ); }
 	print "$Center<a name=\"robots\">&nbsp;</a><br />\n";
 
@@ -15022,9 +15033,9 @@ sub HTMLMainRobots{
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+        
     &tab_head( "$title", 19, 0, 'robots');
-
+        
     print "<tr bgcolor=\"#$color_TableBGRowTitle\""
 	  . Tooltip(16) . "><th>"
 	  . Format_Number(( scalar keys %_robot_h ))
@@ -15267,7 +15278,7 @@ sub HTMLMainSessions{
 sub HTMLMainPages{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) {
 		debug(
 "ShowPagesStats (MaxNbOf{'PageShown'}=$MaxNbOf{'PageShown'} TotalDifferentPages=$TotalDifferentPages)",
@@ -15306,7 +15317,7 @@ sub HTMLMainPages{
 		  )
 		  . "\"$NewLinkTarget>$Message[116]</a>";
 	}
-
+	
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
        # extend the title to include the added link
            $title .= " &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
@@ -15315,7 +15326,7 @@ sub HTMLMainPages{
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+        	
 	&tab_head( "$title", 19, 0, 'urls' );
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th>".Format_Number($TotalDifferentPages)." $Message[28]</th>";
@@ -15557,7 +15568,7 @@ sub HTMLMainOS{
 		: "$StaticLinks.unknownos.$StaticExt"
 	  )
 	  . "\"$NewLinkTarget>$Message[0]</a>";
-
+	  
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
        # extend the title to include the added link
            $title .= " &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
@@ -15566,12 +15577,12 @@ sub HTMLMainOS{
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+        	  
 	&tab_head( "$title", 19, 0, 'os' );
-
+	
 	&BuildKeyList( $MaxNbOf{'OsShown'}, $MinHit{'Os'}, \%new_os_h,
 		\%new_os_p );
-
+		
 	# Graph the top five in a pie chart
 	if (scalar @keylist > 1){
 		foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
@@ -15610,7 +15621,7 @@ sub HTMLMainOS{
 			print "</td></tr>";
 		}
 	}
-
+	
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th width=\"$WIDTHCOLICON\">&nbsp;</th><th>$Message[59]</th>";
 	print
@@ -15620,7 +15631,7 @@ sub HTMLMainOS{
 	my $total_h = 0;
 	my $total_p = 0;
 	my $count = 0;
-
+	
 	foreach my $key (@keylist) {
 		my $p_h = '&nbsp;';
 		my $p_p = '&nbsp;';
@@ -15689,7 +15700,7 @@ sub HTMLMainOS{
 sub HTMLMainBrowsers{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) { debug( "ShowBrowsersStats", 2 ); }
 	print "$Center<a name=\"browsers\">&nbsp;</a><br />\n";
 	my $Totalh        = 0;
@@ -15725,7 +15736,7 @@ sub HTMLMainBrowsers{
 		: "$StaticLinks.unknownbrowser.$StaticExt"
 	  )
 	  . "\"$NewLinkTarget>$Message[0]</a>";
-
+	  
 
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
        # extend the title to include the added link
@@ -15735,14 +15746,14 @@ sub HTMLMainBrowsers{
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+        	  
 	&tab_head( "$title", 19, 0, 'browsers' );
-
+	
 	&BuildKeyList(
 		$MaxNbOf{'BrowsersShown'}, $MinHit{'Browser'},
 		\%new_browser_h,           \%new_browser_p
 	);
-
+	
 	# Graph the top five in a pie chart
 	if (scalar @keylist > 1){
 		foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
@@ -15920,7 +15931,7 @@ sub HTMLMainScreenSize{
 sub HTMLMainReferrers{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) { debug( "ShowOriginStats", 2 ); }
 	print "$Center<a name=\"referer\">&nbsp;</a><br />\n";
 	my $Totalp = 0;
@@ -15948,7 +15959,7 @@ sub HTMLMainReferrers{
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+        
 	&tab_head( $title, 19, 0, 'referer' );
 	my @p_p = ( 0, 0, 0, 0, 0, 0 );
 	if ( $Totalp > 0 ) {
@@ -16162,7 +16173,7 @@ sub HTMLMainReferrers{
 	#if ($ShowOriginStats =~ /P/i) { print "<td>".($_from_p[5]?$_from_p[5]:"&nbsp;")."</td><td>".($_from_p[5]?"$p_p[5] %":"&nbsp;")."</td>"; }
 	#if ($ShowOriginStats =~ /H/i) { print "<td>".($_from_h[5]?$_from_h[5]:"&nbsp;")."</td><td>".($_from_h[5]?"$p_h[5] %":"&nbsp;")."</td>"; }
 	#print "</tr>\n";
-
+	
 	#------- Unknown origin
 	print "<tr><td class=\"aws\"><b>$Message[39]</b></td>";
 	if ( $ShowOriginStats =~ /P/i ) {
@@ -16198,7 +16209,7 @@ sub HTMLMainReferrers{
 sub HTMLMainKeys{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($ShowKeyphrasesStats) {
 		print "$Center<a name=\"keyphrases\">&nbsp;</a>";
 	}
@@ -16211,7 +16222,7 @@ sub HTMLMainKeys{
 		  "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr>";
 	}
 	if ($ShowKeyphrasesStats) {
-
+		
 		# By Keyphrases
 		if ( $ShowKeyphrasesStats && $ShowKeywordsStats ) {
 			print "<td width=\"50%\" valign=\"top\">\n";
@@ -16429,11 +16440,11 @@ sub HTMLMainMisc{
 sub HTMLMainHTTPStatus{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) { debug( "ShowHTTPErrorsStats", 2 ); }
 	print "$Center<a name=\"errors\">&nbsp;</a><br />\n";
 	my $title = "$Message[32]";
-
+	
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
        # extend the title to include the added link
            $title .= " &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
@@ -16442,11 +16453,11 @@ sub HTMLMainHTTPStatus{
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+        	
 	&tab_head( "$title", 19, 0, 'errors' );
-
+	
 	&BuildKeyList( $MaxRowsInHTMLOutput, 1, \%_errors_h, \%_errors_h );
-
+		
 	# Graph the top five in a pie chart
 	if (scalar @keylist > 1){
 		foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
@@ -16473,7 +16484,7 @@ sub HTMLMainHTTPStatus{
 			print "</td></tr>";
 		}
 	}
-
+	
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[32]*</th><th bgcolor=\"#$color_h\" width=\"80\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"80\">$Message[15]</th><th bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th></tr>\n";
 	my $total_h = 0;
@@ -16514,7 +16525,7 @@ sub HTMLMainHTTPStatus{
 sub HTMLMainSMTPStatus{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) { debug( "ShowSMTPErrorsStats", 2 ); }
 	print "$Center<a name=\"errors\">&nbsp;</a><br />\n";
 	my $title = "$Message[147]";
@@ -16551,11 +16562,11 @@ sub HTMLMainSMTPStatus{
 sub HTMLMainCluster{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
-
+	
 	if ($Debug) { debug( "ShowClusterStats", 2 ); }
 	print "$Center<a name=\"clusters\">&nbsp;</a><br />\n";
 	my $title = "$Message[155]";
-
+	
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
        # extend the title to include the added link
            $title .= " &nbsp; - &nbsp; <a href=\"" . (XMLEncode(
@@ -16564,11 +16575,11 @@ sub HTMLMainCluster{
            . "&siteConfig=$SiteConfig" )
            . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+        	
 	&tab_head( "$title", 19, 0, 'clusters' );
-
+	
 	&BuildKeyList( $MaxRowsInHTMLOutput, 1, \%_cluster_p, \%_cluster_p );
-
+	
 	# Graph the top five in a pie chart
 	if (scalar @keylist > 1){
 		foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
@@ -16595,7 +16606,7 @@ sub HTMLMainCluster{
 			print "</td></tr>";
 		}
 	}
-
+	
 	print
 	  "<tr bgcolor=\"#$color_TableBGRowTitle\"><th>$Message[155]</th>";
 	&HTMLShowClusterInfo('__title__');
@@ -16659,7 +16670,7 @@ sub HTMLMainExtra{
 	my $NewLinkParams = shift;
 	my $NewLinkTarget = shift;
 	my $extranum = shift;
-
+	
 	if ($Debug) { debug( "ExtraName$extranum", 2 ); }
 	print "$Center<a name=\"extra$extranum\">&nbsp;</a><br />";
 	my $title = $ExtraName[$extranum];
@@ -16674,7 +16685,7 @@ sub HTMLMainExtra{
 		: "$StaticLinks.allextra$extranum.$StaticExt"
 	  )
 	  . "\"$NewLinkTarget>$Message[80]</a>";
-
+	  
     if ( $AddLinkToExternalCGIWrapper && ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) ) {
         print "&nbsp; - &nbsp; <a href=\""
           . (XMLEncode(
@@ -16683,7 +16694,7 @@ sub HTMLMainExtra{
             . "&sectionTitle=$ExtraName[$extranum]&siteConfig=$SiteConfig" )
             . "\"$NewLinkTarget>$Message[179]</a>");
     }
-
+  
 	print "</th>";
 
 	if ( $ExtraStatTypes[$extranum] =~ m/P/i ) {
@@ -17357,11 +17368,11 @@ else { @DOWIndex = ( 0, 1, 2, 3, 4, 5, 6 ); }
 
 # Should we link to ourselves or to a wrapper script
 $AWScript = ( $WrapperScript ? "$WrapperScript" : "$DirCgi$PROG.$Extension" );
-if (index($AWScript,'?')>-1)
+if (index($AWScript,'?')>-1) 
 {
     $AWScript .= '&amp;';   # $AWScript contains URL parameters
 }
-else
+else 
 {
     $AWScript .= '?';
 }
@@ -17593,7 +17604,7 @@ if ($Debug) {
 }
 
 my $retval = opendir( DIR, "$DirData" );
-if(! $retval)
+if(! $retval) 
 {
     error( "Failed to open directory $DirData : $!");
 }
@@ -17998,7 +18009,7 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 	# Loop on each log line
 	#
 	while ( $line = <LOG> ) {
-
+		
 		# 20080525 BEGIN Patch to test if first char of $line = hex "00" then conclude corrupted with binary code
 		my $FirstHexChar;
 		$FirstHexChar = sprintf( "%02X", ord( substr( $line, 0, 1 ) ) );
@@ -18184,7 +18195,7 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 		elsif($line =~ m/#Fields:/){
  			# log #fields as comment
  			$NbOfLinesComment++;
- 			next;
+ 			next;			
  		}else{
 			$NbOfLinesDropped++;
 			if ($ShowDropped) {
@@ -18195,12 +18206,13 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 		}
 
 		$field[$pos_date] =~
-		  tr/,-\/ \t/:::::/s;  # " \t" is used instead of "\s" not known with tr
+		  tr/,-\/ \tT/::::::/s;  # " \t" is used instead of "\s" not known with tr
 		my @dateparts =
-		  split( /:/, $field[$pos_date] )
-		  ; # tr and split faster than @dateparts=split(/[\/\-:\s]/,$field[$pos_date])
-		 # Detected date format: dddddddddd, YYYY-MM-DD HH:MM:SS (IIS), MM/DD/YY\tHH:MM:SS,
-		 # DD/Month/YYYY:HH:MM:SS (Apache), DD/MM/YYYY HH:MM:SS, Mon DD HH:MM:SS
+		  split( /:/, $field[$pos_date] ); # tr and split faster than @dateparts=split(/[\/\-:\s]/,$field[$pos_date])
+		 # Detected date format: 
+		 # dddddddddd, YYYY-MM-DD HH:MM:SS (IIS), MM/DD/YY\tHH:MM:SS,
+		 # DD/Month/YYYY:HH:MM:SS (Apache), DD/MM/YYYY HH:MM:SS, Mon DD HH:MM:SS,
+		 # YYYY-MM-DDTHH:MM:SS (iso)
 		if ( !$dateparts[1] ) {    # Unix timestamp
 			(
 				$dateparts[5], $dateparts[4], $dateparts[3],
@@ -18598,7 +18610,7 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 
 		# Extension
 		my $extension = Get_Extension($regext, $urlwithnoquery);
-		if ( $NotPageList{$extension} ||
+		if ( $NotPageList{$extension} || 
 		($MimeHashLib{$extension}[1]) && $MimeHashLib{$extension}[1] ne 'p') { $PageBool = 0;}
 		if ( @NotPageFiles && &NotPageFile( $field[$pos_url] ) ) { $PageBool = 0; }
 
@@ -18724,8 +18736,8 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 						if ($Debug) { debug( " New download detected: '$urlwithnoquery'", 2 ); }
 					}
 				# handle 206 download continuation message IF we had a successful 200 before, otherwise it goes in errors
-				}elsif(int($field[$pos_code]) == 206
-					#&& $_downloads{$urlwithnoquery}->{$field[$pos_host]}[0] > 0
+				}elsif(int($field[$pos_code]) == 206 
+					#&& $_downloads{$urlwithnoquery}->{$field[$pos_host]}[0] > 0 
 					&& ($MimeHashLib{$extension}[1] eq 'd')){
 					$_downloads{$urlwithnoquery}->{'AWSTATS_SIZE'} += ($pos_size>0 ? int($field[$pos_size]) : 0);
 					$_downloads{$urlwithnoquery}->{'AWSTATS_206'}++;
@@ -20341,7 +20353,7 @@ END_ERROR_TEXT
 		my $line = <LOG>;
 		chomp $line;
 		$line =~ s/\r$//;
-		if ( !$NbOfLinesParsed )
+		if ( !$NbOfLinesParsed ) 
 		{
             # TODO If there was no lines parsed (log was empty), we only update LastUpdate line with YYYYMMDDHHMMSS 0 0 0 0 0
 			&Read_History_With_TmpUpdate(
@@ -20585,7 +20597,7 @@ if ( scalar keys %HTMLOutput ) {
 		exit 0;
 	}
 
-
+	
 
 # TotalVisits TotalUnique TotalPages TotalHits TotalBytes TotalHostsKnown TotalHostsUnknown
 	$TotalUnique = $TotalVisits = $TotalPages = $TotalHits = $TotalBytes = 0;
@@ -20838,7 +20850,7 @@ if ( scalar keys %HTMLOutput ) {
 		# BY EXTRA SECTIONS
 		#----------------------------
 		HTMLShowExtraSections();
-
+		
 		if ( $HTMLOutput{'info'} ) {
 			# TODO Not yet available
 			print "$Center<a name=\"info\">&nbsp;</a><br />";
@@ -20861,7 +20873,7 @@ if ( scalar keys %HTMLOutput ) {
 	# Output main page
 	#-----------------
 	if ( $HTMLOutput{'main'} ) {
-
+		
 		# Calculate averages
 		my $max_p = 0;
 		my $max_h = 0;
@@ -20996,7 +21008,7 @@ if ( scalar keys %HTMLOutput ) {
 		if ($ShowFileSizesStats) {
 			# TODO
 		}
-
+		
 		# BY DOWNLOADS
 		#-------------------------
 		if ($ShowDownloadsStats) {
@@ -21041,7 +21053,7 @@ if ( scalar keys %HTMLOutput ) {
 		#-------------------------------------
 		if ($ShowKeyphrasesStats || $ShowKeywordsStats){
 			&HTMLMainKeys($NewLinkParams, $NewLinkTarget);
-		}
+		}	
 
 		print "\n<a name=\"other\">&nbsp;</a>\n\n";
 
