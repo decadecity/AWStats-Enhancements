@@ -1111,7 +1111,6 @@
 'youdao',
 'yourls',
 'zemanta',
-'zend_http_client',
 # Other id that are 99% of robots
 'wget',
 'libwww',

@@ -55,6 +55,8 @@ print "Checked $checked in OSSearchIDOrder\n";
 #include the robots file
 do 'robots.pm';
 
+$robots = 0;
+
 #check for items missing in HashIDLib - detect but no name
 $checked = 0;
 foreach (@RobotsSearchIDOrder_list1) {
@@ -64,6 +66,7 @@ foreach (@RobotsSearchIDOrder_list1) {
     print "[$test] not found in RobotsHashIDLib (list1)\n";
   }
 }
+$robots += $checked;
 print "Checked $checked in RobotsHashIDLib (list 1)\n";
 
 $checked = 0;
@@ -74,6 +77,7 @@ foreach (@RobotsSearchIDOrder_list2) {
     print "[$test] not found in RobotsHashIDLib (list2)\n";
   }
 }
+$robots += $checked;
 print "Checked $checked in RobotsHashIDLib (list 2)\n";
 
 $checked = 0;
@@ -84,6 +88,7 @@ foreach (@RobotsSearchIDOrder_listgen) {
     print "[$test] not found in RobotsHashIDLib (listgen)\n";
   }
 }
+$robots += $checked;
 print "Checked $checked in RobotsHashIDLib (listgen)\n";
 
 #check for items missing in SearchID - name but no detect
@@ -95,3 +100,7 @@ while (($key, $value) = each(%RobotsHashIDLib)) {
   }
 }
 print "Checked $checked in RobotsSearchIDOrder_list*\n";
+
+if ($robots != $checked) {
+  print "Mismatch in robots (HashIDLib $robots RobotsSearchIDOrder_list $checked)\n";
+}
